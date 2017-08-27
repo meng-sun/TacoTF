@@ -1,0 +1,5109 @@
+{
+    "traceEvents": [
+        {
+            "ph": "M",
+            "args": {
+                "name": "Allocators"
+            },
+            "pid": 0,
+            "name": "process_name"
+        },
+        {
+            "ph": "M",
+            "args": {
+                "name": "/job:localhost/replica:0/task:0/cpu:0 Compute"
+            },
+            "pid": 1,
+            "name": "process_name"
+        },
+        {
+            "ph": "M",
+            "args": {
+                "name": "/job:localhost/replica:0/task:0/cpu:0 Tensors"
+            },
+            "pid": 2,
+            "name": "process_name"
+        },
+        {
+            "name": "NoOp",
+            "args": {
+                "name": "_SOURCE",
+                "op": "NoOp"
+            },
+            "pid": 1,
+            "ts": 1503674449515863,
+            "cat": "Op",
+            "tid": 0,
+            "ph": "X",
+            "dur": 20
+        },
+        {
+            "name": "Const",
+            "args": {
+                "name": "input_producer/mul/y",
+                "op": "Const"
+            },
+            "pid": 1,
+            "ts": 1503674449515926,
+            "cat": "Op",
+            "tid": 0,
+            "ph": "X",
+            "dur": 8
+        },
+        {
+            "name": "FIFOQueueV2",
+            "args": {
+                "name": "input_producer",
+                "op": "FIFOQueueV2"
+            },
+            "pid": 1,
+            "ts": 1503674449515909,
+            "cat": "Op",
+            "tid": 1,
+            "ph": "X",
+            "dur": 28
+        },
+        {
+            "name": "Const",
+            "args": {
+                "name": "input_producer/fraction_of_32_full/tags",
+                "op": "Const"
+            },
+            "pid": 1,
+            "ts": 1503674449515938,
+            "cat": "Op",
+            "tid": 0,
+            "ph": "X",
+            "dur": 7
+        },
+        {
+            "name": "QueueSizeV2",
+            "args": {
+                "input0": "input_producer",
+                "name": "input_producer/input_producer_Size",
+                "op": "QueueSizeV2"
+            },
+            "pid": 1,
+            "ts": 1503674449515940,
+            "cat": "Op",
+            "tid": 1,
+            "ph": "X",
+            "dur": 15
+        },
+        {
+            "name": "Const",
+            "args": {
+                "name": "pre-processing/ParseSingleExample/ExpandDims/dim",
+                "op": "Const"
+            },
+            "pid": 1,
+            "ts": 1503674449515949,
+            "cat": "Op",
+            "tid": 0,
+            "ph": "X",
+            "dur": 8
+        },
+        {
+            "name": "TFRecordReaderV2",
+            "args": {
+                "name": "TFRecordReaderV2",
+                "op": "TFRecordReaderV2"
+            },
+            "pid": 1,
+            "ts": 1503674449515936,
+            "cat": "Op",
+            "tid": 2,
+            "ph": "X",
+            "dur": 24
+        },
+        {
+            "name": "Const",
+            "args": {
+                "name": "pre-processing/ParseSingleExample/ParseExample/ParseExample/names",
+                "op": "Const"
+            },
+            "pid": 1,
+            "ts": 1503674449515962,
+            "cat": "Op",
+            "tid": 0,
+            "ph": "X",
+            "dur": 6
+        },
+        {
+            "name": "Const",
+            "args": {
+                "name": "pre-processing/ParseSingleExample/ParseExample/ParseExample/sparse_keys_0",
+                "op": "Const"
+            },
+            "pid": 1,
+            "ts": 1503674449515972,
+            "cat": "Op",
+            "tid": 0,
+            "ph": "X",
+            "dur": 6
+        },
+        {
+            "name": "VariableV2",
+            "args": {
+                "name": "W/Adam",
+                "op": "VariableV2"
+            },
+            "pid": 1,
+            "ts": 1503674449515969,
+            "cat": "Op",
+            "tid": 1,
+            "ph": "X",
+            "dur": 17
+        },
+        {
+            "name": "Const",
+            "args": {
+                "name": "pre-processing/ParseSingleExample/ParseExample/ParseExample/sparse_keys_1",
+                "op": "Const"
+            },
+            "pid": 1,
+            "ts": 1503674449515982,
+            "cat": "Op",
+            "tid": 0,
+            "ph": "X",
+            "dur": 8
+        },
+        {
+            "name": "VariableV2",
+            "args": {
+                "name": "W",
+                "op": "VariableV2"
+            },
+            "pid": 1,
+            "ts": 1503674449515952,
+            "cat": "Op",
+            "tid": 3,
+            "ph": "X",
+            "dur": 38
+        },
+        {
+            "name": "Cast",
+            "args": {
+                "input0": "input_producer/input_producer_Size",
+                "name": "input_producer/Cast",
+                "op": "Cast"
+            },
+            "pid": 1,
+            "ts": 1503674449515969,
+            "cat": "Op",
+            "tid": 2,
+            "ph": "X",
+            "dur": 25
+        },
+        {
+            "name": "input_producer/input_producer_Size",
+            "pid": 1,
+            "ts": 1503674449515955,
+            "cat": "DataFlow",
+            "tid": 1,
+            "ph": "s",
+            "id": 0
+        },
+        {
+            "name": "input_producer/input_producer_Size",
+            "pid": 1,
+            "ts": 1503674449515969,
+            "cat": "DataFlow",
+            "tid": 2,
+            "ph": "t",
+            "id": 0
+        },
+        {
+            "name": "Const",
+            "args": {
+                "name": "pre-processing/ParseSingleExample/ParseExample/ParseExample/sparse_keys_2",
+                "op": "Const"
+            },
+            "pid": 1,
+            "ts": 1503674449515994,
+            "cat": "Op",
+            "tid": 0,
+            "ph": "X",
+            "dur": 8
+        },
+        {
+            "name": "VariableV2",
+            "args": {
+                "name": "train/beta1_power",
+                "op": "VariableV2"
+            },
+            "pid": 1,
+            "ts": 1503674449515970,
+            "cat": "Op",
+            "tid": 4,
+            "ph": "X",
+            "dur": 33
+        },
+        {
+            "name": "VariableV2",
+            "args": {
+                "name": "train/beta2_power",
+                "op": "VariableV2"
+            },
+            "pid": 1,
+            "ts": 1503674449515973,
+            "cat": "Op",
+            "tid": 5,
+            "ph": "X",
+            "dur": 34
+        },
+        {
+            "name": "Const",
+            "args": {
+                "name": "pre-processing/ParseSingleExample/ParseExample/ParseExample/sparse_keys_3",
+                "op": "Const"
+            },
+            "pid": 1,
+            "ts": 1503674449516006,
+            "cat": "Op",
+            "tid": 0,
+            "ph": "X",
+            "dur": 8
+        },
+        {
+            "name": "VariableV2",
+            "args": {
+                "name": "W/Adam_1",
+                "op": "VariableV2"
+            },
+            "pid": 1,
+            "ts": 1503674449515979,
+            "cat": "Op",
+            "tid": 6,
+            "ph": "X",
+            "dur": 33
+        },
+        {
+            "name": "Mul",
+            "args": {
+                "input0": "input_producer/Cast",
+                "input1": "input_producer/mul/y",
+                "name": "input_producer/mul",
+                "op": "Mul"
+            },
+            "pid": 1,
+            "ts": 1503674449516002,
+            "cat": "Op",
+            "tid": 1,
+            "ph": "X",
+            "dur": 13
+        },
+        {
+            "name": "input_producer/Cast",
+            "pid": 1,
+            "ts": 1503674449515994,
+            "cat": "DataFlow",
+            "tid": 2,
+            "ph": "s",
+            "id": 1
+        },
+        {
+            "name": "input_producer/Cast",
+            "pid": 1,
+            "ts": 1503674449516002,
+            "cat": "DataFlow",
+            "tid": 1,
+            "ph": "t",
+            "id": 1
+        },
+        {
+            "name": "input_producer/mul/y",
+            "pid": 1,
+            "ts": 1503674449515934,
+            "cat": "DataFlow",
+            "tid": 0,
+            "ph": "s",
+            "id": 2
+        },
+        {
+            "name": "input_producer/mul/y",
+            "pid": 1,
+            "ts": 1503674449516002,
+            "cat": "DataFlow",
+            "tid": 1,
+            "ph": "t",
+            "id": 2
+        },
+        {
+            "name": "Identity",
+            "args": {
+                "input0": "W",
+                "name": "W/read",
+                "op": "Identity"
+            },
+            "pid": 1,
+            "ts": 1503674449515996,
+            "cat": "Op",
+            "tid": 2,
+            "ph": "X",
+            "dur": 9
+        },
+        {
+            "name": "W",
+            "pid": 1,
+            "ts": 1503674449515990,
+            "cat": "DataFlow",
+            "tid": 3,
+            "ph": "s",
+            "id": 3
+        },
+        {
+            "name": "W",
+            "pid": 1,
+            "ts": 1503674449515996,
+            "cat": "DataFlow",
+            "tid": 2,
+            "ph": "t",
+            "id": 3
+        },
+        {
+            "name": "Identity",
+            "args": {
+                "input0": "train/beta2_power",
+                "name": "train/beta2_power/read",
+                "op": "Identity"
+            },
+            "pid": 1,
+            "ts": 1503674449516014,
+            "cat": "Op",
+            "tid": 2,
+            "ph": "X",
+            "dur": 8
+        },
+        {
+            "name": "train/beta2_power",
+            "pid": 1,
+            "ts": 1503674449516007,
+            "cat": "DataFlow",
+            "tid": 5,
+            "ph": "s",
+            "id": 4
+        },
+        {
+            "name": "train/beta2_power",
+            "pid": 1,
+            "ts": 1503674449516014,
+            "cat": "DataFlow",
+            "tid": 2,
+            "ph": "t",
+            "id": 4
+        },
+        {
+            "name": "Identity",
+            "args": {
+                "input0": "train/beta1_power",
+                "name": "train/beta1_power/read",
+                "op": "Identity"
+            },
+            "pid": 1,
+            "ts": 1503674449516019,
+            "cat": "Op",
+            "tid": 0,
+            "ph": "X",
+            "dur": 8
+        },
+        {
+            "name": "train/beta1_power",
+            "pid": 1,
+            "ts": 1503674449516003,
+            "cat": "DataFlow",
+            "tid": 4,
+            "ph": "s",
+            "id": 5
+        },
+        {
+            "name": "train/beta1_power",
+            "pid": 1,
+            "ts": 1503674449516019,
+            "cat": "DataFlow",
+            "tid": 0,
+            "ph": "t",
+            "id": 5
+        },
+        {
+            "name": "Const",
+            "args": {
+                "name": "pre-processing/ParseSingleExample/ParseExample/ParseExample/sparse_keys_4",
+                "op": "Const"
+            },
+            "pid": 1,
+            "ts": 1503674449516018,
+            "cat": "Op",
+            "tid": 1,
+            "ph": "X",
+            "dur": 10
+        },
+        {
+            "name": "ScalarSummary",
+            "args": {
+                "input0": "input_producer/fraction_of_32_full/tags",
+                "input1": "input_producer/mul",
+                "name": "input_producer/fraction_of_32_full",
+                "op": "ScalarSummary"
+            },
+            "pid": 1,
+            "ts": 1503674449516021,
+            "cat": "Op",
+            "tid": 3,
+            "ph": "X",
+            "dur": 13
+        },
+        {
+            "name": "input_producer/fraction_of_32_full/tags",
+            "pid": 1,
+            "ts": 1503674449515945,
+            "cat": "DataFlow",
+            "tid": 0,
+            "ph": "s",
+            "id": 6
+        },
+        {
+            "name": "input_producer/fraction_of_32_full/tags",
+            "pid": 1,
+            "ts": 1503674449516021,
+            "cat": "DataFlow",
+            "tid": 3,
+            "ph": "t",
+            "id": 6
+        },
+        {
+            "name": "input_producer/mul",
+            "pid": 1,
+            "ts": 1503674449516015,
+            "cat": "DataFlow",
+            "tid": 1,
+            "ph": "s",
+            "id": 7
+        },
+        {
+            "name": "input_producer/mul",
+            "pid": 1,
+            "ts": 1503674449516021,
+            "cat": "DataFlow",
+            "tid": 3,
+            "ph": "t",
+            "id": 7
+        },
+        {
+            "name": "VariableV2",
+            "args": {
+                "name": "b",
+                "op": "VariableV2"
+            },
+            "pid": 1,
+            "ts": 1503674449515953,
+            "cat": "Op",
+            "tid": 7,
+            "ph": "X",
+            "dur": 61
+        },
+        {
+            "name": "Const",
+            "args": {
+                "name": "pre-processing/ParseSingleExample/ParseExample/ParseExample/sparse_keys_5",
+                "op": "Const"
+            },
+            "pid": 1,
+            "ts": 1503674449516036,
+            "cat": "Op",
+            "tid": 0,
+            "ph": "X",
+            "dur": 7
+        },
+        {
+            "name": "Cast",
+            "args": {
+                "input0": "train/beta1_power/read",
+                "name": "train/Adam/update_W/Cast",
+                "op": "Cast"
+            },
+            "pid": 1,
+            "ts": 1503674449516031,
+            "cat": "Op",
+            "tid": 1,
+            "ph": "X",
+            "dur": 13
+        },
+        {
+            "name": "train/beta1_power/read",
+            "pid": 1,
+            "ts": 1503674449516027,
+            "cat": "DataFlow",
+            "tid": 0,
+            "ph": "s",
+            "id": 8
+        },
+        {
+            "name": "train/beta1_power/read",
+            "pid": 1,
+            "ts": 1503674449516031,
+            "cat": "DataFlow",
+            "tid": 1,
+            "ph": "t",
+            "id": 8
+        },
+        {
+            "name": "Cast",
+            "args": {
+                "input0": "train/beta2_power/read",
+                "name": "train/Adam/update_W/Cast_1",
+                "op": "Cast"
+            },
+            "pid": 1,
+            "ts": 1503674449516025,
+            "cat": "Op",
+            "tid": 2,
+            "ph": "X",
+            "dur": 13
+        },
+        {
+            "name": "MergeSummary",
+            "args": {
+                "input0": "input_producer/fraction_of_32_full",
+                "name": "Merge/MergeSummary",
+                "op": "MergeSummary"
+            },
+            "pid": 1,
+            "ts": 1503674449516038,
+            "cat": "Op",
+            "tid": 3,
+            "ph": "X",
+            "dur": 14
+        },
+        {
+            "name": "Const",
+            "args": {
+                "name": "pre-processing/ParseSingleExample/Slice_Indices_lI/begin",
+                "op": "Const"
+            },
+            "pid": 1,
+            "ts": 1503674449516046,
+            "cat": "Op",
+            "tid": 0,
+            "ph": "X",
+            "dur": 9
+        },
+        {
+            "name": "_Retval",
+            "args": {
+                "input0": "Merge/MergeSummary",
+                "name": "_retval_Merge/MergeSummary_0_0",
+                "op": "_Retval"
+            },
+            "pid": 1,
+            "ts": 1503674449516056,
+            "cat": "Op",
+            "tid": 0,
+            "ph": "X",
+            "dur": 5
+        },
+        {
+            "name": "Merge/MergeSummary",
+            "pid": 1,
+            "ts": 1503674449516052,
+            "cat": "DataFlow",
+            "tid": 3,
+            "ph": "s",
+            "id": 9
+        },
+        {
+            "name": "Merge/MergeSummary",
+            "pid": 1,
+            "ts": 1503674449516056,
+            "cat": "DataFlow",
+            "tid": 0,
+            "ph": "t",
+            "id": 9
+        },
+        {
+            "name": "Identity",
+            "args": {
+                "input0": "b",
+                "name": "b/read",
+                "op": "Identity"
+            },
+            "pid": 1,
+            "ts": 1503674449516051,
+            "cat": "Op",
+            "tid": 1,
+            "ph": "X",
+            "dur": 12
+        },
+        {
+            "name": "b",
+            "pid": 1,
+            "ts": 1503674449516014,
+            "cat": "DataFlow",
+            "tid": 7,
+            "ph": "s",
+            "id": 10
+        },
+        {
+            "name": "b",
+            "pid": 1,
+            "ts": 1503674449516051,
+            "cat": "DataFlow",
+            "tid": 1,
+            "ph": "t",
+            "id": 10
+        },
+        {
+            "name": "ReaderReadV2",
+            "args": {
+                "input0": "TFRecordReaderV2",
+                "input1": "input_producer",
+                "name": "ReaderReadV2",
+                "op": "ReaderReadV2"
+            },
+            "pid": 1,
+            "ts": 1503674449515968,
+            "cat": "Op",
+            "tid": 8,
+            "ph": "X",
+            "dur": 102
+        },
+        {
+            "name": "TFRecordReaderV2",
+            "pid": 1,
+            "ts": 1503674449515960,
+            "cat": "DataFlow",
+            "tid": 2,
+            "ph": "s",
+            "id": 11
+        },
+        {
+            "name": "TFRecordReaderV2",
+            "pid": 1,
+            "ts": 1503674449515968,
+            "cat": "DataFlow",
+            "tid": 8,
+            "ph": "t",
+            "id": 11
+        },
+        {
+            "name": "input_producer",
+            "pid": 1,
+            "ts": 1503674449515937,
+            "cat": "DataFlow",
+            "tid": 1,
+            "ph": "s",
+            "id": 12
+        },
+        {
+            "name": "input_producer",
+            "pid": 1,
+            "ts": 1503674449515968,
+            "cat": "DataFlow",
+            "tid": 8,
+            "ph": "t",
+            "id": 12
+        },
+        {
+            "name": "Const",
+            "args": {
+                "name": "pre-processing/ParseSingleExample/Slice_Indices_lI/size",
+                "op": "Const"
+            },
+            "pid": 1,
+            "ts": 1503674449516058,
+            "cat": "Op",
+            "tid": 2,
+            "ph": "X",
+            "dur": 18
+        },
+        {
+            "name": "Const",
+            "args": {
+                "name": "pre-processing/ParseSingleExample/Squeeze_Shape_lI/begin",
+                "op": "Const"
+            },
+            "pid": 1,
+            "ts": 1503674449516081,
+            "cat": "Op",
+            "tid": 0,
+            "ph": "X",
+            "dur": 8
+        },
+        {
+            "name": "Const",
+            "args": {
+                "name": "pre-processing/ParseSingleExample/Squeeze_Shape_lI/size",
+                "op": "Const"
+            },
+            "pid": 1,
+            "ts": 1503674449516092,
+            "cat": "Op",
+            "tid": 0,
+            "ph": "X",
+            "dur": 7
+        },
+        {
+            "name": "ExpandDims",
+            "args": {
+                "input0": "ReaderReadV2:1",
+                "input1": "pre-processing/ParseSingleExample/ExpandDims/dim",
+                "name": "pre-processing/ParseSingleExample/ExpandDims",
+                "op": "ExpandDims"
+            },
+            "pid": 1,
+            "ts": 1503674449516090,
+            "cat": "Op",
+            "tid": 1,
+            "ph": "X",
+            "dur": 10
+        },
+        {
+            "name": "ReaderReadV2:1",
+            "pid": 1,
+            "ts": 1503674449516070,
+            "cat": "DataFlow",
+            "tid": 8,
+            "ph": "s",
+            "id": 13
+        },
+        {
+            "name": "ReaderReadV2:1",
+            "pid": 1,
+            "ts": 1503674449516090,
+            "cat": "DataFlow",
+            "tid": 1,
+            "ph": "t",
+            "id": 13
+        },
+        {
+            "name": "pre-processing/ParseSingleExample/ExpandDims/dim",
+            "pid": 1,
+            "ts": 1503674449515957,
+            "cat": "DataFlow",
+            "tid": 0,
+            "ph": "s",
+            "id": 14
+        },
+        {
+            "name": "pre-processing/ParseSingleExample/ExpandDims/dim",
+            "pid": 1,
+            "ts": 1503674449516090,
+            "cat": "DataFlow",
+            "tid": 1,
+            "ph": "t",
+            "id": 14
+        },
+        {
+            "name": "Const",
+            "args": {
+                "name": "pre-processing/ExpandDims/dim",
+                "op": "Const"
+            },
+            "pid": 1,
+            "ts": 1503674449516102,
+            "cat": "Op",
+            "tid": 0,
+            "ph": "X",
+            "dur": 7
+        },
+        {
+            "name": "Const",
+            "args": {
+                "name": "layer1/taco_tensor_creation/Const",
+                "op": "Const"
+            },
+            "pid": 1,
+            "ts": 1503674449516112,
+            "cat": "Op",
+            "tid": 0,
+            "ph": "X",
+            "dur": 7
+        },
+        {
+            "name": "Const",
+            "args": {
+                "name": "layer1/taco_tensor_creation/Const_1",
+                "op": "Const"
+            },
+            "pid": 1,
+            "ts": 1503674449516121,
+            "cat": "Op",
+            "tid": 0,
+            "ph": "X",
+            "dur": 6
+        },
+        {
+            "name": "Const",
+            "args": {
+                "name": "layer1/taco_expression_calculation/TacoExprOp/expression",
+                "op": "Const"
+            },
+            "pid": 1,
+            "ts": 1503674449516130,
+            "cat": "Op",
+            "tid": 0,
+            "ph": "X",
+            "dur": 6
+        },
+        {
+            "name": "Const",
+            "args": {
+                "name": "cross_entropy/Sub/y",
+                "op": "Const"
+            },
+            "pid": 1,
+            "ts": 1503674449516138,
+            "cat": "Op",
+            "tid": 0,
+            "ph": "X",
+            "dur": 6
+        },
+        {
+            "name": "Const",
+            "args": {
+                "name": "cross_entropy/Slice_2/begin",
+                "op": "Const"
+            },
+            "pid": 1,
+            "ts": 1503674449516146,
+            "cat": "Op",
+            "tid": 0,
+            "ph": "X",
+            "dur": 7
+        },
+        {
+            "name": "Const",
+            "args": {
+                "name": "train/gradients/Const",
+                "op": "Const"
+            },
+            "pid": 1,
+            "ts": 1503674449516155,
+            "cat": "Op",
+            "tid": 0,
+            "ph": "X",
+            "dur": 6
+        },
+        {
+            "name": "Const",
+            "args": {
+                "name": "train/gradients/layer1/taco_expression_calculation/TacoExprOp_grad/TacoTensor/format",
+                "op": "Const"
+            },
+            "pid": 1,
+            "ts": 1503674449516163,
+            "cat": "Op",
+            "tid": 0,
+            "ph": "X",
+            "dur": 7
+        },
+        {
+            "name": "Const",
+            "args": {
+                "name": "train/gradients/layer1/taco_expression_calculation/TacoExprOp_grad/Equal_1/x",
+                "op": "Const"
+            },
+            "pid": 1,
+            "ts": 1503674449516172,
+            "cat": "Op",
+            "tid": 0,
+            "ph": "X",
+            "dur": 6
+        },
+        {
+            "name": "Const",
+            "args": {
+                "name": "train/gradients/layer1/taco_expression_calculation/TacoExprOp_grad/case/always_true",
+                "op": "Const"
+            },
+            "pid": 1,
+            "ts": 1503674449516180,
+            "cat": "Op",
+            "tid": 0,
+            "ph": "X",
+            "dur": 7
+        },
+        {
+            "name": "Const",
+            "args": {
+                "name": "train/Adam/beta1",
+                "op": "Const"
+            },
+            "pid": 1,
+            "ts": 1503674449516189,
+            "cat": "Op",
+            "tid": 0,
+            "ph": "X",
+            "dur": 6
+        },
+        {
+            "name": "Const",
+            "args": {
+                "name": "train/Adam/beta2",
+                "op": "Const"
+            },
+            "pid": 1,
+            "ts": 1503674449516197,
+            "cat": "Op",
+            "tid": 0,
+            "ph": "X",
+            "dur": 6
+        },
+        {
+            "name": "Const",
+            "args": {
+                "name": "layer1/taco_tensor_creation/TacoFastDense/_0__cf__2",
+                "op": "Const"
+            },
+            "pid": 1,
+            "ts": 1503674449516205,
+            "cat": "Op",
+            "tid": 0,
+            "ph": "X",
+            "dur": 7
+        },
+        {
+            "name": "Const",
+            "args": {
+                "name": "train/Adam/update_W/Cast_5/_2__cf__4",
+                "op": "Const"
+            },
+            "pid": 1,
+            "ts": 1503674449516215,
+            "cat": "Op",
+            "tid": 0,
+            "ph": "X",
+            "dur": 6
+        },
+        {
+            "name": "Const",
+            "args": {
+                "name": "train/Adam/update_W/Cast_4/_3__cf__5",
+                "op": "Const"
+            },
+            "pid": 1,
+            "ts": 1503674449516223,
+            "cat": "Op",
+            "tid": 0,
+            "ph": "X",
+            "dur": 6
+        },
+        {
+            "name": "Const",
+            "args": {
+                "name": "train/Adam/update_W/Cast_3/_4__cf__6",
+                "op": "Const"
+            },
+            "pid": 1,
+            "ts": 1503674449516231,
+            "cat": "Op",
+            "tid": 0,
+            "ph": "X",
+            "dur": 6
+        },
+        {
+            "name": "ParseExample",
+            "args": {
+                "input2": "pre-processing/ParseSingleExample/ParseExample/ParseExample/sparse_keys_0",
+                "input3": "pre-processing/ParseSingleExample/ParseExample/ParseExample/sparse_keys_1",
+                "input0": "pre-processing/ParseSingleExample/ExpandDims",
+                "input1": "pre-processing/ParseSingleExample/ParseExample/ParseExample/names",
+                "input6": "pre-processing/ParseSingleExample/ParseExample/ParseExample/sparse_keys_4",
+                "name": "pre-processing/ParseSingleExample/ParseExample/ParseExample",
+                "input4": "pre-processing/ParseSingleExample/ParseExample/ParseExample/sparse_keys_2",
+                "input5": "pre-processing/ParseSingleExample/ParseExample/ParseExample/sparse_keys_3",
+                "input7": "pre-processing/ParseSingleExample/ParseExample/ParseExample/sparse_keys_5",
+                "op": "ParseExample"
+            },
+            "pid": 1,
+            "ts": 1503674449516104,
+            "cat": "Op",
+            "tid": 1,
+            "ph": "X",
+            "dur": 134
+        },
+        {
+            "name": "pre-processing/ParseSingleExample/ParseExample/ParseExample/names",
+            "pid": 1,
+            "ts": 1503674449515968,
+            "cat": "DataFlow",
+            "tid": 0,
+            "ph": "s",
+            "id": 15
+        },
+        {
+            "name": "pre-processing/ParseSingleExample/ParseExample/ParseExample/names",
+            "pid": 1,
+            "ts": 1503674449516104,
+            "cat": "DataFlow",
+            "tid": 1,
+            "ph": "t",
+            "id": 15
+        },
+        {
+            "name": "pre-processing/ParseSingleExample/ParseExample/ParseExample/sparse_keys_0",
+            "pid": 1,
+            "ts": 1503674449515978,
+            "cat": "DataFlow",
+            "tid": 0,
+            "ph": "s",
+            "id": 16
+        },
+        {
+            "name": "pre-processing/ParseSingleExample/ParseExample/ParseExample/sparse_keys_0",
+            "pid": 1,
+            "ts": 1503674449516104,
+            "cat": "DataFlow",
+            "tid": 1,
+            "ph": "t",
+            "id": 16
+        },
+        {
+            "name": "pre-processing/ParseSingleExample/ParseExample/ParseExample/sparse_keys_1",
+            "pid": 1,
+            "ts": 1503674449515990,
+            "cat": "DataFlow",
+            "tid": 0,
+            "ph": "s",
+            "id": 17
+        },
+        {
+            "name": "pre-processing/ParseSingleExample/ParseExample/ParseExample/sparse_keys_1",
+            "pid": 1,
+            "ts": 1503674449516104,
+            "cat": "DataFlow",
+            "tid": 1,
+            "ph": "t",
+            "id": 17
+        },
+        {
+            "name": "pre-processing/ParseSingleExample/ParseExample/ParseExample/sparse_keys_2",
+            "pid": 1,
+            "ts": 1503674449516002,
+            "cat": "DataFlow",
+            "tid": 0,
+            "ph": "s",
+            "id": 18
+        },
+        {
+            "name": "pre-processing/ParseSingleExample/ParseExample/ParseExample/sparse_keys_2",
+            "pid": 1,
+            "ts": 1503674449516104,
+            "cat": "DataFlow",
+            "tid": 1,
+            "ph": "t",
+            "id": 18
+        },
+        {
+            "name": "pre-processing/ParseSingleExample/ParseExample/ParseExample/sparse_keys_3",
+            "pid": 1,
+            "ts": 1503674449516014,
+            "cat": "DataFlow",
+            "tid": 0,
+            "ph": "s",
+            "id": 19
+        },
+        {
+            "name": "pre-processing/ParseSingleExample/ParseExample/ParseExample/sparse_keys_3",
+            "pid": 1,
+            "ts": 1503674449516104,
+            "cat": "DataFlow",
+            "tid": 1,
+            "ph": "t",
+            "id": 19
+        },
+        {
+            "name": "pre-processing/ParseSingleExample/ParseExample/ParseExample/sparse_keys_5",
+            "pid": 1,
+            "ts": 1503674449516043,
+            "cat": "DataFlow",
+            "tid": 0,
+            "ph": "s",
+            "id": 20
+        },
+        {
+            "name": "pre-processing/ParseSingleExample/ParseExample/ParseExample/sparse_keys_5",
+            "pid": 1,
+            "ts": 1503674449516104,
+            "cat": "DataFlow",
+            "tid": 1,
+            "ph": "t",
+            "id": 20
+        },
+        {
+            "name": "Const",
+            "args": {
+                "name": "train/Adam/update_W/Cast_2/_5__cf__7",
+                "op": "Const"
+            },
+            "pid": 1,
+            "ts": 1503674449516240,
+            "cat": "Op",
+            "tid": 0,
+            "ph": "X",
+            "dur": 7
+        },
+        {
+            "name": "Cast",
+            "args": {
+                "input0": "pre-processing/ParseSingleExample/ParseExample/ParseExample:10",
+                "name": "pre-processing/Cast",
+                "op": "Cast"
+            },
+            "pid": 1,
+            "ts": 1503674449516253,
+            "cat": "Op",
+            "tid": 0,
+            "ph": "X",
+            "dur": 13
+        },
+        {
+            "name": "pre-processing/ParseSingleExample/ParseExample/ParseExample:10",
+            "pid": 1,
+            "ts": 1503674449516238,
+            "cat": "DataFlow",
+            "tid": 1,
+            "ph": "s",
+            "id": 21
+        },
+        {
+            "name": "pre-processing/ParseSingleExample/ParseExample/ParseExample:10",
+            "pid": 1,
+            "ts": 1503674449516253,
+            "cat": "DataFlow",
+            "tid": 0,
+            "ph": "t",
+            "id": 21
+        },
+        {
+            "name": "Cast",
+            "args": {
+                "input0": "pre-processing/ParseSingleExample/ParseExample/ParseExample:7",
+                "name": "pre-processing/Cast_1",
+                "op": "Cast"
+            },
+            "pid": 1,
+            "ts": 1503674449516260,
+            "cat": "Op",
+            "tid": 1,
+            "ph": "X",
+            "dur": 14
+        },
+        {
+            "name": "Cast",
+            "args": {
+                "input0": "pre-processing/ParseSingleExample/ParseExample/ParseExample:11",
+                "name": "pre-processing/Cast_2",
+                "op": "Cast"
+            },
+            "pid": 1,
+            "ts": 1503674449516267,
+            "cat": "Op",
+            "tid": 0,
+            "ph": "X",
+            "dur": 14
+        },
+        {
+            "name": "pre-processing/ParseSingleExample/ParseExample/ParseExample:11",
+            "pid": 1,
+            "ts": 1503674449516238,
+            "cat": "DataFlow",
+            "tid": 1,
+            "ph": "s",
+            "id": 22
+        },
+        {
+            "name": "pre-processing/ParseSingleExample/ParseExample/ParseExample:11",
+            "pid": 1,
+            "ts": 1503674449516267,
+            "cat": "DataFlow",
+            "tid": 0,
+            "ph": "t",
+            "id": 22
+        },
+        {
+            "name": "Cast",
+            "args": {
+                "input0": "pre-processing/ParseSingleExample/ParseExample/ParseExample:8",
+                "name": "layer1/taco_tensor_creation/Cast",
+                "op": "Cast"
+            },
+            "pid": 1,
+            "ts": 1503674449516272,
+            "cat": "Op",
+            "tid": 2,
+            "ph": "X",
+            "dur": 11
+        },
+        {
+            "name": "pre-processing/ParseSingleExample/ParseExample/ParseExample:8",
+            "pid": 1,
+            "ts": 1503674449516238,
+            "cat": "DataFlow",
+            "tid": 1,
+            "ph": "s",
+            "id": 23
+        },
+        {
+            "name": "pre-processing/ParseSingleExample/ParseExample/ParseExample:8",
+            "pid": 1,
+            "ts": 1503674449516272,
+            "cat": "DataFlow",
+            "tid": 2,
+            "ph": "t",
+            "id": 23
+        },
+        {
+            "name": "Slice",
+            "args": {
+                "input2": "pre-processing/ParseSingleExample/Slice_Indices_lI/size",
+                "input0": "pre-processing/ParseSingleExample/ParseExample/ParseExample:1",
+                "input1": "pre-processing/ParseSingleExample/Slice_Indices_lI/begin",
+                "name": "pre-processing/ParseSingleExample/Slice_Indices_lI",
+                "op": "Slice"
+            },
+            "pid": 1,
+            "ts": 1503674449516272,
+            "cat": "Op",
+            "tid": 3,
+            "ph": "X",
+            "dur": 13
+        },
+        {
+            "name": "pre-processing/ParseSingleExample/ParseExample/ParseExample:1",
+            "pid": 1,
+            "ts": 1503674449516238,
+            "cat": "DataFlow",
+            "tid": 1,
+            "ph": "s",
+            "id": 24
+        },
+        {
+            "name": "pre-processing/ParseSingleExample/ParseExample/ParseExample:1",
+            "pid": 1,
+            "ts": 1503674449516272,
+            "cat": "DataFlow",
+            "tid": 3,
+            "ph": "t",
+            "id": 24
+        },
+        {
+            "name": "pre-processing/ParseSingleExample/Slice_Indices_lI/begin",
+            "pid": 1,
+            "ts": 1503674449516055,
+            "cat": "DataFlow",
+            "tid": 0,
+            "ph": "s",
+            "id": 25
+        },
+        {
+            "name": "pre-processing/ParseSingleExample/Slice_Indices_lI/begin",
+            "pid": 1,
+            "ts": 1503674449516272,
+            "cat": "DataFlow",
+            "tid": 3,
+            "ph": "t",
+            "id": 25
+        },
+        {
+            "name": "pre-processing/ParseSingleExample/Slice_Indices_lI/size",
+            "pid": 1,
+            "ts": 1503674449516076,
+            "cat": "DataFlow",
+            "tid": 2,
+            "ph": "s",
+            "id": 26
+        },
+        {
+            "name": "pre-processing/ParseSingleExample/Slice_Indices_lI/size",
+            "pid": 1,
+            "ts": 1503674449516272,
+            "cat": "DataFlow",
+            "tid": 3,
+            "ph": "t",
+            "id": 26
+        },
+        {
+            "name": "Slice",
+            "args": {
+                "input2": "pre-processing/ParseSingleExample/Squeeze_Shape_lI/size",
+                "input0": "pre-processing/ParseSingleExample/ParseExample/ParseExample:13",
+                "input1": "pre-processing/ParseSingleExample/Squeeze_Shape_lI/begin",
+                "name": "pre-processing/ParseSingleExample/Squeeze_Shape_lI",
+                "op": "Slice"
+            },
+            "pid": 1,
+            "ts": 1503674449516280,
+            "cat": "Op",
+            "tid": 1,
+            "ph": "X",
+            "dur": 12
+        },
+        {
+            "name": "pre-processing/ParseSingleExample/Squeeze_Shape_lI/begin",
+            "pid": 1,
+            "ts": 1503674449516089,
+            "cat": "DataFlow",
+            "tid": 0,
+            "ph": "s",
+            "id": 27
+        },
+        {
+            "name": "pre-processing/ParseSingleExample/Squeeze_Shape_lI/begin",
+            "pid": 1,
+            "ts": 1503674449516280,
+            "cat": "DataFlow",
+            "tid": 1,
+            "ph": "t",
+            "id": 27
+        },
+        {
+            "name": "pre-processing/ParseSingleExample/Squeeze_Shape_lI/size",
+            "pid": 1,
+            "ts": 1503674449516099,
+            "cat": "DataFlow",
+            "tid": 0,
+            "ph": "s",
+            "id": 28
+        },
+        {
+            "name": "pre-processing/ParseSingleExample/Squeeze_Shape_lI/size",
+            "pid": 1,
+            "ts": 1503674449516280,
+            "cat": "DataFlow",
+            "tid": 1,
+            "ph": "t",
+            "id": 28
+        },
+        {
+            "name": "Slice",
+            "args": {
+                "input2": "pre-processing/ParseSingleExample/Squeeze_Shape_nI/size",
+                "input0": "pre-processing/ParseSingleExample/ParseExample/ParseExample:16",
+                "input1": "pre-processing/ParseSingleExample/Squeeze_Shape_nI/begin",
+                "name": "pre-processing/ParseSingleExample/Squeeze_Shape_nI",
+                "op": "Slice"
+            },
+            "pid": 1,
+            "ts": 1503674449516279,
+            "cat": "Op",
+            "tid": 4,
+            "ph": "X",
+            "dur": 14
+        },
+        {
+            "name": "pre-processing/ParseSingleExample/ParseExample/ParseExample:16",
+            "pid": 1,
+            "ts": 1503674449516238,
+            "cat": "DataFlow",
+            "tid": 1,
+            "ph": "s",
+            "id": 29
+        },
+        {
+            "name": "pre-processing/ParseSingleExample/ParseExample/ParseExample:16",
+            "pid": 1,
+            "ts": 1503674449516279,
+            "cat": "DataFlow",
+            "tid": 4,
+            "ph": "t",
+            "id": 29
+        },
+        {
+            "name": "Slice",
+            "args": {
+                "input2": "pre-processing/ParseSingleExample/Slice_Indices_nI/size",
+                "input0": "pre-processing/ParseSingleExample/ParseExample/ParseExample:4",
+                "input1": "pre-processing/ParseSingleExample/Slice_Indices_nI/begin",
+                "name": "pre-processing/ParseSingleExample/Slice_Indices_nI",
+                "op": "Slice"
+            },
+            "pid": 1,
+            "ts": 1503674449516286,
+            "cat": "Op",
+            "tid": 0,
+            "ph": "X",
+            "dur": 16
+        },
+        {
+            "name": "pre-processing/ParseSingleExample/ParseExample/ParseExample:4",
+            "pid": 1,
+            "ts": 1503674449516238,
+            "cat": "DataFlow",
+            "tid": 1,
+            "ph": "s",
+            "id": 30
+        },
+        {
+            "name": "pre-processing/ParseSingleExample/ParseExample/ParseExample:4",
+            "pid": 1,
+            "ts": 1503674449516286,
+            "cat": "DataFlow",
+            "tid": 0,
+            "ph": "t",
+            "id": 30
+        },
+        {
+            "name": "SparseToDense",
+            "args": {
+                "input2": "pre-processing/Cast_1",
+                "input3": "pre-processing/SparseToDense_1/default_value",
+                "input0": "pre-processing/ParseSingleExample/Slice_Indices_lI",
+                "input1": "pre-processing/ParseSingleExample/Squeeze_Shape_lI",
+                "name": "pre-processing/SparseToDense_1",
+                "op": "SparseToDense"
+            },
+            "pid": 1,
+            "ts": 1503674449516299,
+            "cat": "Op",
+            "tid": 1,
+            "ph": "X",
+            "dur": 20
+        },
+        {
+            "name": "pre-processing/ParseSingleExample/Slice_Indices_lI",
+            "pid": 1,
+            "ts": 1503674449516285,
+            "cat": "DataFlow",
+            "tid": 3,
+            "ph": "s",
+            "id": 31
+        },
+        {
+            "name": "pre-processing/ParseSingleExample/Slice_Indices_lI",
+            "pid": 1,
+            "ts": 1503674449516299,
+            "cat": "DataFlow",
+            "tid": 1,
+            "ph": "t",
+            "id": 31
+        },
+        {
+            "name": "Pack",
+            "args": {
+                "input0": "pre-processing/SparseToDense_1",
+                "name": "layer1/taco_tensor_creation/TacoTensor_1/indices",
+                "op": "Pack"
+            },
+            "pid": 1,
+            "ts": 1503674449516324,
+            "cat": "Op",
+            "tid": 0,
+            "ph": "X",
+            "dur": 8
+        },
+        {
+            "name": "pre-processing/SparseToDense_1",
+            "pid": 1,
+            "ts": 1503674449516319,
+            "cat": "DataFlow",
+            "tid": 1,
+            "ph": "s",
+            "id": 32
+        },
+        {
+            "name": "pre-processing/SparseToDense_1",
+            "pid": 1,
+            "ts": 1503674449516324,
+            "cat": "DataFlow",
+            "tid": 0,
+            "ph": "t",
+            "id": 32
+        },
+        {
+            "name": "SparseToDense",
+            "args": {
+                "input2": "pre-processing/Cast",
+                "input3": "pre-processing/SparseToDense/default_value",
+                "input0": "pre-processing/ParseSingleExample/Slice_Indices_nI",
+                "input1": "pre-processing/ParseSingleExample/Squeeze_Shape_nI",
+                "name": "pre-processing/SparseToDense",
+                "op": "SparseToDense"
+            },
+            "pid": 1,
+            "ts": 1503674449516307,
+            "cat": "Op",
+            "tid": 2,
+            "ph": "X",
+            "dur": 27
+        },
+        {
+            "name": "pre-processing/ParseSingleExample/Slice_Indices_nI",
+            "pid": 1,
+            "ts": 1503674449516302,
+            "cat": "DataFlow",
+            "tid": 0,
+            "ph": "s",
+            "id": 33
+        },
+        {
+            "name": "pre-processing/ParseSingleExample/Slice_Indices_nI",
+            "pid": 1,
+            "ts": 1503674449516307,
+            "cat": "DataFlow",
+            "tid": 2,
+            "ph": "t",
+            "id": 33
+        },
+        {
+            "name": "pre-processing/ParseSingleExample/Squeeze_Shape_nI",
+            "pid": 1,
+            "ts": 1503674449516293,
+            "cat": "DataFlow",
+            "tid": 4,
+            "ph": "s",
+            "id": 34
+        },
+        {
+            "name": "pre-processing/ParseSingleExample/Squeeze_Shape_nI",
+            "pid": 1,
+            "ts": 1503674449516307,
+            "cat": "DataFlow",
+            "tid": 2,
+            "ph": "t",
+            "id": 34
+        },
+        {
+            "name": "pre-processing/Cast",
+            "pid": 1,
+            "ts": 1503674449516266,
+            "cat": "DataFlow",
+            "tid": 0,
+            "ph": "s",
+            "id": 35
+        },
+        {
+            "name": "pre-processing/Cast",
+            "pid": 1,
+            "ts": 1503674449516307,
+            "cat": "DataFlow",
+            "tid": 2,
+            "ph": "t",
+            "id": 35
+        },
+        {
+            "name": "ExpandDims",
+            "args": {
+                "input0": "pre-processing/SparseToDense",
+                "input1": "pre-processing/ExpandDims/dim",
+                "name": "pre-processing/ExpandDims",
+                "op": "ExpandDims"
+            },
+            "pid": 1,
+            "ts": 1503674449516409,
+            "cat": "Op",
+            "tid": 0,
+            "ph": "X",
+            "dur": 9
+        },
+        {
+            "name": "pre-processing/SparseToDense",
+            "pid": 1,
+            "ts": 1503674449516334,
+            "cat": "DataFlow",
+            "tid": 2,
+            "ph": "s",
+            "id": 36
+        },
+        {
+            "name": "pre-processing/SparseToDense",
+            "pid": 1,
+            "ts": 1503674449516409,
+            "cat": "DataFlow",
+            "tid": 0,
+            "ph": "t",
+            "id": 36
+        },
+        {
+            "name": "TacoTensor",
+            "args": {
+                "input2": "layer1/taco_tensor_creation/Cast",
+                "input3": "layer1/taco_tensor_creation/TacoTensor_1/indices",
+                "input0": "layer1/taco_tensor_creation/Const_1",
+                "input1": "pre-processing/ParseSingleExample/ParseExample/ParseExample:6",
+                "name": "layer1/taco_tensor_creation/TacoTensor_1",
+                "op": "TacoTensor"
+            },
+            "pid": 1,
+            "ts": 1503674449516401,
+            "cat": "Op",
+            "tid": 1,
+            "ph": "X",
+            "dur": 91
+        },
+        {
+            "name": "layer1/taco_tensor_creation/Const_1",
+            "pid": 1,
+            "ts": 1503674449516127,
+            "cat": "DataFlow",
+            "tid": 0,
+            "ph": "s",
+            "id": 37
+        },
+        {
+            "name": "layer1/taco_tensor_creation/Const_1",
+            "pid": 1,
+            "ts": 1503674449516401,
+            "cat": "DataFlow",
+            "tid": 1,
+            "ph": "t",
+            "id": 37
+        },
+        {
+            "name": "layer1/taco_tensor_creation/Cast",
+            "pid": 1,
+            "ts": 1503674449516283,
+            "cat": "DataFlow",
+            "tid": 2,
+            "ph": "s",
+            "id": 38
+        },
+        {
+            "name": "layer1/taco_tensor_creation/Cast",
+            "pid": 1,
+            "ts": 1503674449516401,
+            "cat": "DataFlow",
+            "tid": 1,
+            "ph": "t",
+            "id": 38
+        },
+        {
+            "name": "layer1/taco_tensor_creation/TacoTensor_1/indices",
+            "pid": 1,
+            "ts": 1503674449516332,
+            "cat": "DataFlow",
+            "tid": 0,
+            "ph": "s",
+            "id": 39
+        },
+        {
+            "name": "layer1/taco_tensor_creation/TacoTensor_1/indices",
+            "pid": 1,
+            "ts": 1503674449516401,
+            "cat": "DataFlow",
+            "tid": 1,
+            "ph": "t",
+            "id": 39
+        },
+        {
+            "name": "Rank",
+            "args": {
+                "input0": "layer1/taco_tensor_creation/TacoTensor_1",
+                "name": "cross_entropy/Rank_2",
+                "op": "Rank"
+            },
+            "pid": 1,
+            "ts": 1503674449516498,
+            "cat": "Op",
+            "tid": 0,
+            "ph": "X",
+            "dur": 6
+        },
+        {
+            "name": "layer1/taco_tensor_creation/TacoTensor_1",
+            "pid": 1,
+            "ts": 1503674449516492,
+            "cat": "DataFlow",
+            "tid": 1,
+            "ph": "s",
+            "id": 40
+        },
+        {
+            "name": "layer1/taco_tensor_creation/TacoTensor_1",
+            "pid": 1,
+            "ts": 1503674449516498,
+            "cat": "DataFlow",
+            "tid": 0,
+            "ph": "t",
+            "id": 40
+        },
+        {
+            "name": "Shape",
+            "args": {
+                "input0": "layer1/taco_tensor_creation/TacoTensor_1",
+                "name": "cross_entropy/Shape_2",
+                "op": "Shape"
+            },
+            "pid": 1,
+            "ts": 1503674449516514,
+            "cat": "Op",
+            "tid": 0,
+            "ph": "X",
+            "dur": 7
+        },
+        {
+            "name": "layer1/taco_tensor_creation/TacoTensor_1",
+            "pid": 1,
+            "ts": 1503674449516492,
+            "cat": "DataFlow",
+            "tid": 1,
+            "ph": "s",
+            "id": 41
+        },
+        {
+            "name": "layer1/taco_tensor_creation/TacoTensor_1",
+            "pid": 1,
+            "ts": 1503674449516514,
+            "cat": "DataFlow",
+            "tid": 0,
+            "ph": "t",
+            "id": 41
+        },
+        {
+            "name": "Sub",
+            "args": {
+                "input0": "cross_entropy/Rank_2",
+                "input1": "cross_entropy/Sub_1/y",
+                "name": "cross_entropy/Sub_1",
+                "op": "Sub"
+            },
+            "pid": 1,
+            "ts": 1503674449516521,
+            "cat": "Op",
+            "tid": 1,
+            "ph": "X",
+            "dur": 14
+        },
+        {
+            "name": "cross_entropy/Rank_2",
+            "pid": 1,
+            "ts": 1503674449516504,
+            "cat": "DataFlow",
+            "tid": 0,
+            "ph": "s",
+            "id": 42
+        },
+        {
+            "name": "cross_entropy/Rank_2",
+            "pid": 1,
+            "ts": 1503674449516521,
+            "cat": "DataFlow",
+            "tid": 1,
+            "ph": "t",
+            "id": 42
+        },
+        {
+            "name": "Pack",
+            "args": {
+                "input0": "cross_entropy/Sub_1",
+                "name": "cross_entropy/Slice_1/begin",
+                "op": "Pack"
+            },
+            "pid": 1,
+            "ts": 1503674449516539,
+            "cat": "Op",
+            "tid": 0,
+            "ph": "X",
+            "dur": 8
+        },
+        {
+            "name": "cross_entropy/Sub_1",
+            "pid": 1,
+            "ts": 1503674449516535,
+            "cat": "DataFlow",
+            "tid": 1,
+            "ph": "s",
+            "id": 43
+        },
+        {
+            "name": "cross_entropy/Sub_1",
+            "pid": 1,
+            "ts": 1503674449516539,
+            "cat": "DataFlow",
+            "tid": 0,
+            "ph": "t",
+            "id": 43
+        },
+        {
+            "name": "Slice",
+            "args": {
+                "input2": "cross_entropy/Slice_1/size",
+                "input0": "cross_entropy/Shape_2",
+                "input1": "cross_entropy/Slice_1/begin",
+                "name": "cross_entropy/Slice_1",
+                "op": "Slice"
+            },
+            "pid": 1,
+            "ts": 1503674449516550,
+            "cat": "Op",
+            "tid": 0,
+            "ph": "X",
+            "dur": 10
+        },
+        {
+            "name": "ConcatV2",
+            "args": {
+                "input2": "cross_entropy/concat_1/axis",
+                "input0": "cross_entropy/concat_1/values_0",
+                "input1": "cross_entropy/Slice_1",
+                "name": "cross_entropy/concat_1",
+                "op": "ConcatV2"
+            },
+            "pid": 1,
+            "ts": 1503674449516563,
+            "cat": "Op",
+            "tid": 0,
+            "ph": "X",
+            "dur": 13
+        },
+        {
+            "name": "Reshape",
+            "args": {
+                "input0": "layer1/taco_tensor_creation/TacoTensor_1",
+                "input1": "cross_entropy/concat_1",
+                "name": "cross_entropy/Reshape_1",
+                "op": "Reshape"
+            },
+            "pid": 1,
+            "ts": 1503674449516580,
+            "cat": "Op",
+            "tid": 0,
+            "ph": "X",
+            "dur": 7
+        },
+        {
+            "name": "layer1/taco_tensor_creation/TacoTensor_1",
+            "pid": 1,
+            "ts": 1503674449516492,
+            "cat": "DataFlow",
+            "tid": 1,
+            "ph": "s",
+            "id": 44
+        },
+        {
+            "name": "layer1/taco_tensor_creation/TacoTensor_1",
+            "pid": 1,
+            "ts": 1503674449516580,
+            "cat": "DataFlow",
+            "tid": 0,
+            "ph": "t",
+            "id": 44
+        },
+        {
+            "name": "TacoTensor",
+            "args": {
+                "input2": "pre-processing/Cast_2",
+                "input3": "pre-processing/ExpandDims",
+                "input0": "layer1/taco_tensor_creation/Const",
+                "input1": "pre-processing/ParseSingleExample/ParseExample/ParseExample:9",
+                "name": "layer1/taco_tensor_creation/TacoTensor",
+                "op": "TacoTensor"
+            },
+            "pid": 1,
+            "ts": 1503674449516422,
+            "cat": "Op",
+            "tid": 2,
+            "ph": "X",
+            "dur": 204
+        },
+        {
+            "name": "layer1/taco_tensor_creation/Const",
+            "pid": 1,
+            "ts": 1503674449516119,
+            "cat": "DataFlow",
+            "tid": 0,
+            "ph": "s",
+            "id": 45
+        },
+        {
+            "name": "layer1/taco_tensor_creation/Const",
+            "pid": 1,
+            "ts": 1503674449516422,
+            "cat": "DataFlow",
+            "tid": 2,
+            "ph": "t",
+            "id": 45
+        },
+        {
+            "name": "pre-processing/ParseSingleExample/ParseExample/ParseExample:9",
+            "pid": 1,
+            "ts": 1503674449516238,
+            "cat": "DataFlow",
+            "tid": 1,
+            "ph": "s",
+            "id": 46
+        },
+        {
+            "name": "pre-processing/ParseSingleExample/ParseExample/ParseExample:9",
+            "pid": 1,
+            "ts": 1503674449516422,
+            "cat": "DataFlow",
+            "tid": 2,
+            "ph": "t",
+            "id": 46
+        },
+        {
+            "name": "pre-processing/Cast_2",
+            "pid": 1,
+            "ts": 1503674449516281,
+            "cat": "DataFlow",
+            "tid": 0,
+            "ph": "s",
+            "id": 47
+        },
+        {
+            "name": "pre-processing/Cast_2",
+            "pid": 1,
+            "ts": 1503674449516422,
+            "cat": "DataFlow",
+            "tid": 2,
+            "ph": "t",
+            "id": 47
+        },
+        {
+            "name": "pre-processing/ExpandDims",
+            "pid": 1,
+            "ts": 1503674449516418,
+            "cat": "DataFlow",
+            "tid": 0,
+            "ph": "s",
+            "id": 48
+        },
+        {
+            "name": "pre-processing/ExpandDims",
+            "pid": 1,
+            "ts": 1503674449516422,
+            "cat": "DataFlow",
+            "tid": 2,
+            "ph": "t",
+            "id": 48
+        },
+        {
+            "name": "TacoExprOp",
+            "args": {
+                "input2": "W/read",
+                "input3": "layer1/taco_tensor_creation/TacoTensor_1",
+                "input0": "layer1/taco_expression_calculation/TacoExprOp/expression",
+                "input1": "layer1/taco_tensor_creation/TacoTensor",
+                "input6": "layer1/taco_tensor_creation/TacoTensor_1:1",
+                "name": "layer1/taco_expression_calculation/TacoExprOp",
+                "input4": "layer1/taco_tensor_creation/TacoTensor:1",
+                "input5": "layer1/taco_tensor_creation/TacoFastDense",
+                "op": "TacoExprOp"
+            },
+            "pid": 1,
+            "ts": 1503674449516632,
+            "cat": "Op",
+            "tid": 0,
+            "ph": "X",
+            "dur": 916
+        },
+        {
+            "name": "layer1/taco_tensor_creation/TacoTensor",
+            "pid": 1,
+            "ts": 1503674449516626,
+            "cat": "DataFlow",
+            "tid": 2,
+            "ph": "s",
+            "id": 49
+        },
+        {
+            "name": "layer1/taco_tensor_creation/TacoTensor",
+            "pid": 1,
+            "ts": 1503674449516632,
+            "cat": "DataFlow",
+            "tid": 0,
+            "ph": "t",
+            "id": 49
+        },
+        {
+            "name": "W/read",
+            "pid": 1,
+            "ts": 1503674449516005,
+            "cat": "DataFlow",
+            "tid": 2,
+            "ph": "s",
+            "id": 50
+        },
+        {
+            "name": "W/read",
+            "pid": 1,
+            "ts": 1503674449516632,
+            "cat": "DataFlow",
+            "tid": 0,
+            "ph": "t",
+            "id": 50
+        },
+        {
+            "name": "layer1/taco_tensor_creation/TacoTensor_1",
+            "pid": 1,
+            "ts": 1503674449516492,
+            "cat": "DataFlow",
+            "tid": 1,
+            "ph": "s",
+            "id": 51
+        },
+        {
+            "name": "layer1/taco_tensor_creation/TacoTensor_1",
+            "pid": 1,
+            "ts": 1503674449516632,
+            "cat": "DataFlow",
+            "tid": 0,
+            "ph": "t",
+            "id": 51
+        },
+        {
+            "name": "layer1/taco_tensor_creation/TacoTensor:1",
+            "pid": 1,
+            "ts": 1503674449516626,
+            "cat": "DataFlow",
+            "tid": 2,
+            "ph": "s",
+            "id": 52
+        },
+        {
+            "name": "layer1/taco_tensor_creation/TacoTensor:1",
+            "pid": 1,
+            "ts": 1503674449516632,
+            "cat": "DataFlow",
+            "tid": 0,
+            "ph": "t",
+            "id": 52
+        },
+        {
+            "name": "layer1/taco_tensor_creation/TacoTensor_1:1",
+            "pid": 1,
+            "ts": 1503674449516492,
+            "cat": "DataFlow",
+            "tid": 1,
+            "ph": "s",
+            "id": 53
+        },
+        {
+            "name": "layer1/taco_tensor_creation/TacoTensor_1:1",
+            "pid": 1,
+            "ts": 1503674449516632,
+            "cat": "DataFlow",
+            "tid": 0,
+            "ph": "t",
+            "id": 53
+        },
+        {
+            "name": "Shape",
+            "args": {
+                "input0": "layer1/taco_expression_calculation/TacoExprOp",
+                "name": "train/gradients/layer1/bias/add_grad/Shape",
+                "op": "Shape"
+            },
+            "pid": 1,
+            "ts": 1503674449517572,
+            "cat": "Op",
+            "tid": 0,
+            "ph": "X",
+            "dur": 10
+        },
+        {
+            "name": "BroadcastGradientArgs",
+            "args": {
+                "input0": "train/gradients/layer1/bias/add_grad/Shape",
+                "input1": "train/gradients/layer1/bias/add_grad/Shape_1",
+                "name": "train/gradients/layer1/bias/add_grad/BroadcastGradientArgs",
+                "op": "BroadcastGradientArgs"
+            },
+            "pid": 1,
+            "ts": 1503674449517585,
+            "cat": "Op",
+            "tid": 0,
+            "ph": "X",
+            "dur": 8
+        },
+        {
+            "name": "Add",
+            "args": {
+                "input0": "layer1/taco_expression_calculation/TacoExprOp",
+                "input1": "b/read",
+                "name": "layer1/bias/add",
+                "op": "Add"
+            },
+            "pid": 1,
+            "ts": 1503674449517597,
+            "cat": "Op",
+            "tid": 0,
+            "ph": "X",
+            "dur": 12
+        },
+        {
+            "name": "b/read",
+            "pid": 1,
+            "ts": 1503674449516063,
+            "cat": "DataFlow",
+            "tid": 1,
+            "ph": "s",
+            "id": 54
+        },
+        {
+            "name": "b/read",
+            "pid": 1,
+            "ts": 1503674449517597,
+            "cat": "DataFlow",
+            "tid": 0,
+            "ph": "t",
+            "id": 54
+        },
+        {
+            "name": "Rank",
+            "args": {
+                "input0": "layer1/bias/add",
+                "name": "cross_entropy/Rank",
+                "op": "Rank"
+            },
+            "pid": 1,
+            "ts": 1503674449517613,
+            "cat": "Op",
+            "tid": 0,
+            "ph": "X",
+            "dur": 5
+        },
+        {
+            "name": "Shape",
+            "args": {
+                "input0": "layer1/bias/add",
+                "name": "cross_entropy/Shape",
+                "op": "Shape"
+            },
+            "pid": 1,
+            "ts": 1503674449517625,
+            "cat": "Op",
+            "tid": 0,
+            "ph": "X",
+            "dur": 5
+        },
+        {
+            "name": "Equal",
+            "args": {
+                "input0": "train/gradients/layer1/taco_expression_calculation/TacoExprOp_grad/Equal/x",
+                "input1": "layer1/taco_expression_calculation/TacoExprOp:5",
+                "name": "train/gradients/layer1/taco_expression_calculation/TacoExprOp_grad/Equal",
+                "op": "Equal"
+            },
+            "pid": 1,
+            "ts": 1503674449517612,
+            "cat": "Op",
+            "tid": 1,
+            "ph": "X",
+            "dur": 27
+        },
+        {
+            "name": "layer1/taco_expression_calculation/TacoExprOp:5",
+            "pid": 1,
+            "ts": 1503674449517548,
+            "cat": "DataFlow",
+            "tid": 0,
+            "ph": "s",
+            "id": 55
+        },
+        {
+            "name": "layer1/taco_expression_calculation/TacoExprOp:5",
+            "pid": 1,
+            "ts": 1503674449517612,
+            "cat": "DataFlow",
+            "tid": 1,
+            "ph": "t",
+            "id": 55
+        },
+        {
+            "name": "Equal",
+            "args": {
+                "input0": "train/gradients/layer1/taco_expression_calculation/TacoExprOp_grad/Equal_1/x",
+                "input1": "layer1/taco_expression_calculation/TacoExprOp:5",
+                "name": "train/gradients/layer1/taco_expression_calculation/TacoExprOp_grad/Equal_1",
+                "op": "Equal"
+            },
+            "pid": 1,
+            "ts": 1503674449517617,
+            "cat": "Op",
+            "tid": 2,
+            "ph": "X",
+            "dur": 27
+        },
+        {
+            "name": "train/gradients/layer1/taco_expression_calculation/TacoExprOp_grad/Equal_1/x",
+            "pid": 1,
+            "ts": 1503674449516178,
+            "cat": "DataFlow",
+            "tid": 0,
+            "ph": "s",
+            "id": 56
+        },
+        {
+            "name": "train/gradients/layer1/taco_expression_calculation/TacoExprOp_grad/Equal_1/x",
+            "pid": 1,
+            "ts": 1503674449517617,
+            "cat": "DataFlow",
+            "tid": 2,
+            "ph": "t",
+            "id": 56
+        },
+        {
+            "name": "layer1/taco_expression_calculation/TacoExprOp:5",
+            "pid": 1,
+            "ts": 1503674449517548,
+            "cat": "DataFlow",
+            "tid": 0,
+            "ph": "s",
+            "id": 57
+        },
+        {
+            "name": "layer1/taco_expression_calculation/TacoExprOp:5",
+            "pid": 1,
+            "ts": 1503674449517617,
+            "cat": "DataFlow",
+            "tid": 2,
+            "ph": "t",
+            "id": 57
+        },
+        {
+            "name": "Sub",
+            "args": {
+                "input0": "cross_entropy/Rank_1",
+                "input1": "cross_entropy/Sub/y",
+                "name": "cross_entropy/Sub",
+                "op": "Sub"
+            },
+            "pid": 1,
+            "ts": 1503674449517628,
+            "cat": "Op",
+            "tid": 3,
+            "ph": "X",
+            "dur": 26
+        },
+        {
+            "name": "cross_entropy/Sub/y",
+            "pid": 1,
+            "ts": 1503674449516144,
+            "cat": "DataFlow",
+            "tid": 0,
+            "ph": "s",
+            "id": 58
+        },
+        {
+            "name": "cross_entropy/Sub/y",
+            "pid": 1,
+            "ts": 1503674449517628,
+            "cat": "DataFlow",
+            "tid": 3,
+            "ph": "t",
+            "id": 58
+        },
+        {
+            "name": "LogicalNot",
+            "args": {
+                "input0": "train/gradients/layer1/taco_expression_calculation/TacoExprOp_grad/Equal_1",
+                "name": "train/gradients/layer1/taco_expression_calculation/TacoExprOp_grad/case/not_1/LogicalNot",
+                "op": "LogicalNot"
+            },
+            "pid": 1,
+            "ts": 1503674449517653,
+            "cat": "Op",
+            "tid": 0,
+            "ph": "X",
+            "dur": 8
+        },
+        {
+            "name": "train/gradients/layer1/taco_expression_calculation/TacoExprOp_grad/Equal_1",
+            "pid": 1,
+            "ts": 1503674449517644,
+            "cat": "DataFlow",
+            "tid": 2,
+            "ph": "s",
+            "id": 59
+        },
+        {
+            "name": "train/gradients/layer1/taco_expression_calculation/TacoExprOp_grad/Equal_1",
+            "pid": 1,
+            "ts": 1503674449517653,
+            "cat": "DataFlow",
+            "tid": 0,
+            "ph": "t",
+            "id": 59
+        },
+        {
+            "name": "LogicalAnd",
+            "args": {
+                "input0": "train/gradients/layer1/taco_expression_calculation/TacoExprOp_grad/Equal",
+                "input1": "train/gradients/layer1/taco_expression_calculation/TacoExprOp_grad/case/always_true",
+                "name": "train/gradients/layer1/taco_expression_calculation/TacoExprOp_grad/case/case_0/LogicalAnd",
+                "op": "LogicalAnd"
+            },
+            "pid": 1,
+            "ts": 1503674449517656,
+            "cat": "Op",
+            "tid": 1,
+            "ph": "X",
+            "dur": 10
+        },
+        {
+            "name": "train/gradients/layer1/taco_expression_calculation/TacoExprOp_grad/case/always_true",
+            "pid": 1,
+            "ts": 1503674449516187,
+            "cat": "DataFlow",
+            "tid": 0,
+            "ph": "s",
+            "id": 60
+        },
+        {
+            "name": "train/gradients/layer1/taco_expression_calculation/TacoExprOp_grad/case/always_true",
+            "pid": 1,
+            "ts": 1503674449517656,
+            "cat": "DataFlow",
+            "tid": 1,
+            "ph": "t",
+            "id": 60
+        },
+        {
+            "name": "LogicalNot",
+            "args": {
+                "input0": "train/gradients/layer1/taco_expression_calculation/TacoExprOp_grad/Equal",
+                "name": "train/gradients/layer1/taco_expression_calculation/TacoExprOp_grad/case/not_0/LogicalNot",
+                "op": "LogicalNot"
+            },
+            "pid": 1,
+            "ts": 1503674449517650,
+            "cat": "Op",
+            "tid": 2,
+            "ph": "X",
+            "dur": 7
+        },
+        {
+            "name": "train/gradients/layer1/taco_expression_calculation/TacoExprOp_grad/Equal",
+            "pid": 1,
+            "ts": 1503674449517639,
+            "cat": "DataFlow",
+            "tid": 1,
+            "ph": "s",
+            "id": 61
+        },
+        {
+            "name": "train/gradients/layer1/taco_expression_calculation/TacoExprOp_grad/Equal",
+            "pid": 1,
+            "ts": 1503674449517650,
+            "cat": "DataFlow",
+            "tid": 2,
+            "ph": "t",
+            "id": 61
+        },
+        {
+            "name": "Switch",
+            "args": {
+                "input0": "train/gradients/layer1/taco_expression_calculation/TacoExprOp_grad/case/case_0/LogicalAnd",
+                "input1": "train/gradients/layer1/taco_expression_calculation/TacoExprOp_grad/case/case_0/LogicalAnd",
+                "name": "train/gradients/layer1/taco_expression_calculation/TacoExprOp_grad/case/If_2/Switch",
+                "op": "Switch"
+            },
+            "pid": 1,
+            "ts": 1503674449517671,
+            "cat": "Op",
+            "tid": 0,
+            "ph": "X",
+            "dur": 6
+        },
+        {
+            "name": "train/gradients/layer1/taco_expression_calculation/TacoExprOp_grad/case/case_0/LogicalAnd",
+            "pid": 1,
+            "ts": 1503674449517666,
+            "cat": "DataFlow",
+            "tid": 1,
+            "ph": "s",
+            "id": 62
+        },
+        {
+            "name": "train/gradients/layer1/taco_expression_calculation/TacoExprOp_grad/case/case_0/LogicalAnd",
+            "pid": 1,
+            "ts": 1503674449517671,
+            "cat": "DataFlow",
+            "tid": 0,
+            "ph": "t",
+            "id": 62
+        },
+        {
+            "name": "train/gradients/layer1/taco_expression_calculation/TacoExprOp_grad/case/case_0/LogicalAnd",
+            "pid": 1,
+            "ts": 1503674449517666,
+            "cat": "DataFlow",
+            "tid": 1,
+            "ph": "s",
+            "id": 63
+        },
+        {
+            "name": "train/gradients/layer1/taco_expression_calculation/TacoExprOp_grad/case/case_0/LogicalAnd",
+            "pid": 1,
+            "ts": 1503674449517671,
+            "cat": "DataFlow",
+            "tid": 0,
+            "ph": "t",
+            "id": 63
+        },
+        {
+            "name": "Pack",
+            "args": {
+                "input0": "cross_entropy/Sub",
+                "name": "cross_entropy/Slice/begin",
+                "op": "Pack"
+            },
+            "pid": 1,
+            "ts": 1503674449517671,
+            "cat": "Op",
+            "tid": 1,
+            "ph": "X",
+            "dur": 11
+        },
+        {
+            "name": "cross_entropy/Sub",
+            "pid": 1,
+            "ts": 1503674449517654,
+            "cat": "DataFlow",
+            "tid": 3,
+            "ph": "s",
+            "id": 64
+        },
+        {
+            "name": "cross_entropy/Sub",
+            "pid": 1,
+            "ts": 1503674449517671,
+            "cat": "DataFlow",
+            "tid": 1,
+            "ph": "t",
+            "id": 64
+        },
+        {
+            "name": "LogicalAnd",
+            "args": {
+                "input0": "train/gradients/layer1/taco_expression_calculation/TacoExprOp_grad/case/always_true",
+                "input1": "train/gradients/layer1/taco_expression_calculation/TacoExprOp_grad/case/not_0/LogicalNot",
+                "name": "train/gradients/layer1/taco_expression_calculation/TacoExprOp_grad/case/and_not_0/LogicalAnd",
+                "op": "LogicalAnd"
+            },
+            "pid": 1,
+            "ts": 1503674449517676,
+            "cat": "Op",
+            "tid": 2,
+            "ph": "X",
+            "dur": 8
+        },
+        {
+            "name": "train/gradients/layer1/taco_expression_calculation/TacoExprOp_grad/case/always_true",
+            "pid": 1,
+            "ts": 1503674449516187,
+            "cat": "DataFlow",
+            "tid": 0,
+            "ph": "s",
+            "id": 65
+        },
+        {
+            "name": "train/gradients/layer1/taco_expression_calculation/TacoExprOp_grad/case/always_true",
+            "pid": 1,
+            "ts": 1503674449517676,
+            "cat": "DataFlow",
+            "tid": 2,
+            "ph": "t",
+            "id": 65
+        },
+        {
+            "name": "Identity",
+            "args": {
+                "input0": "train/gradients/layer1/taco_expression_calculation/TacoExprOp_grad/case/case_0/LogicalAnd",
+                "name": "train/gradients/layer1/taco_expression_calculation/TacoExprOp_grad/case/If_2/pred_id",
+                "op": "Identity"
+            },
+            "pid": 1,
+            "ts": 1503674449517681,
+            "cat": "Op",
+            "tid": 0,
+            "ph": "X",
+            "dur": 7
+        },
+        {
+            "name": "train/gradients/layer1/taco_expression_calculation/TacoExprOp_grad/case/case_0/LogicalAnd",
+            "pid": 1,
+            "ts": 1503674449517666,
+            "cat": "DataFlow",
+            "tid": 1,
+            "ph": "s",
+            "id": 66
+        },
+        {
+            "name": "train/gradients/layer1/taco_expression_calculation/TacoExprOp_grad/case/case_0/LogicalAnd",
+            "pid": 1,
+            "ts": 1503674449517681,
+            "cat": "DataFlow",
+            "tid": 0,
+            "ph": "t",
+            "id": 66
+        },
+        {
+            "name": "Identity",
+            "args": {
+                "input0": "train/gradients/layer1/taco_expression_calculation/TacoExprOp_grad/case/If_2/Switch:1",
+                "name": "train/gradients/layer1/taco_expression_calculation/TacoExprOp_grad/case/If_2/switch_t",
+                "op": "Identity"
+            },
+            "pid": 1,
+            "ts": 1503674449517691,
+            "cat": "Op",
+            "tid": 0,
+            "ph": "X",
+            "dur": 4
+        },
+        {
+            "name": "LogicalAnd",
+            "args": {
+                "input0": "train/gradients/layer1/taco_expression_calculation/TacoExprOp_grad/Equal_1",
+                "input1": "train/gradients/layer1/taco_expression_calculation/TacoExprOp_grad/case/and_not_0/LogicalAnd",
+                "name": "train/gradients/layer1/taco_expression_calculation/TacoExprOp_grad/case/case_1/LogicalAnd",
+                "op": "LogicalAnd"
+            },
+            "pid": 1,
+            "ts": 1503674449517693,
+            "cat": "Op",
+            "tid": 1,
+            "ph": "X",
+            "dur": 7
+        },
+        {
+            "name": "train/gradients/layer1/taco_expression_calculation/TacoExprOp_grad/Equal_1",
+            "pid": 1,
+            "ts": 1503674449517644,
+            "cat": "DataFlow",
+            "tid": 2,
+            "ph": "s",
+            "id": 67
+        },
+        {
+            "name": "train/gradients/layer1/taco_expression_calculation/TacoExprOp_grad/Equal_1",
+            "pid": 1,
+            "ts": 1503674449517693,
+            "cat": "DataFlow",
+            "tid": 1,
+            "ph": "t",
+            "id": 67
+        },
+        {
+            "name": "train/gradients/layer1/taco_expression_calculation/TacoExprOp_grad/case/and_not_0/LogicalAnd",
+            "pid": 1,
+            "ts": 1503674449517684,
+            "cat": "DataFlow",
+            "tid": 2,
+            "ph": "s",
+            "id": 68
+        },
+        {
+            "name": "train/gradients/layer1/taco_expression_calculation/TacoExprOp_grad/case/and_not_0/LogicalAnd",
+            "pid": 1,
+            "ts": 1503674449517693,
+            "cat": "DataFlow",
+            "tid": 1,
+            "ph": "t",
+            "id": 68
+        },
+        {
+            "name": "Slice",
+            "args": {
+                "input2": "cross_entropy/Slice_2/size",
+                "input0": "cross_entropy/Shape",
+                "input1": "cross_entropy/Slice_2/begin",
+                "name": "cross_entropy/Slice_2",
+                "op": "Slice"
+            },
+            "pid": 1,
+            "ts": 1503674449517691,
+            "cat": "Op",
+            "tid": 2,
+            "ph": "X",
+            "dur": 10
+        },
+        {
+            "name": "cross_entropy/Shape",
+            "pid": 1,
+            "ts": 1503674449517630,
+            "cat": "DataFlow",
+            "tid": 0,
+            "ph": "s",
+            "id": 69
+        },
+        {
+            "name": "cross_entropy/Shape",
+            "pid": 1,
+            "ts": 1503674449517691,
+            "cat": "DataFlow",
+            "tid": 2,
+            "ph": "t",
+            "id": 69
+        },
+        {
+            "name": "cross_entropy/Slice_2/begin",
+            "pid": 1,
+            "ts": 1503674449516153,
+            "cat": "DataFlow",
+            "tid": 0,
+            "ph": "s",
+            "id": 70
+        },
+        {
+            "name": "cross_entropy/Slice_2/begin",
+            "pid": 1,
+            "ts": 1503674449517691,
+            "cat": "DataFlow",
+            "tid": 2,
+            "ph": "t",
+            "id": 70
+        },
+        {
+            "name": "Switch",
+            "args": {
+                "input0": "layer1/taco_expression_calculation/TacoExprOp:4",
+                "input1": "train/gradients/layer1/taco_expression_calculation/TacoExprOp_grad/case/If_2/pred_id",
+                "name": "train/gradients/layer1/taco_expression_calculation/TacoExprOp_grad/case/If_2/TacoExprOp/Switch",
+                "op": "Switch"
+            },
+            "pid": 1,
+            "ts": 1503674449517698,
+            "cat": "Op",
+            "tid": 0,
+            "ph": "X",
+            "dur": 7
+        },
+        {
+            "name": "Switch",
+            "args": {
+                "input0": "train/gradients/layer1/taco_expression_calculation/TacoExprOp_grad/case/case_1/LogicalAnd",
+                "input1": "train/gradients/layer1/taco_expression_calculation/TacoExprOp_grad/case/case_1/LogicalAnd",
+                "name": "train/gradients/layer1/taco_expression_calculation/TacoExprOp_grad/case/If_1/Switch",
+                "op": "Switch"
+            },
+            "pid": 1,
+            "ts": 1503674449517704,
+            "cat": "Op",
+            "tid": 1,
+            "ph": "X",
+            "dur": 6
+        },
+        {
+            "name": "Switch",
+            "args": {
+                "input0": "layer1/taco_expression_calculation/TacoExprOp:1",
+                "input1": "train/gradients/layer1/taco_expression_calculation/TacoExprOp_grad/case/If_2/pred_id",
+                "name": "train/gradients/layer1/taco_expression_calculation/TacoExprOp_grad/case/If_2/TacoExprOp/Switch_1",
+                "op": "Switch"
+            },
+            "pid": 1,
+            "ts": 1503674449517709,
+            "cat": "Op",
+            "tid": 0,
+            "ph": "X",
+            "dur": 5
+        },
+        {
+            "name": "Switch",
+            "args": {
+                "input0": "layer1/taco_expression_calculation/TacoExprOp:3",
+                "input1": "train/gradients/layer1/taco_expression_calculation/TacoExprOp_grad/case/If_2/pred_id",
+                "name": "train/gradients/layer1/taco_expression_calculation/TacoExprOp_grad/case/If_2/TacoExprOp/Switch_3",
+                "op": "Switch"
+            },
+            "pid": 1,
+            "ts": 1503674449517716,
+            "cat": "Op",
+            "tid": 0,
+            "ph": "X",
+            "dur": 5
+        },
+        {
+            "name": "Identity",
+            "args": {
+                "input0": "train/gradients/layer1/taco_expression_calculation/TacoExprOp_grad/case/case_1/LogicalAnd",
+                "name": "train/gradients/layer1/taco_expression_calculation/TacoExprOp_grad/case/If_1/pred_id",
+                "op": "Identity"
+            },
+            "pid": 1,
+            "ts": 1503674449517714,
+            "cat": "Op",
+            "tid": 1,
+            "ph": "X",
+            "dur": 8
+        },
+        {
+            "name": "Slice",
+            "args": {
+                "input2": "cross_entropy/Slice/size",
+                "input0": "cross_entropy/Shape_1",
+                "input1": "cross_entropy/Slice/begin",
+                "name": "cross_entropy/Slice",
+                "op": "Slice"
+            },
+            "pid": 1,
+            "ts": 1503674449517693,
+            "cat": "Op",
+            "tid": 3,
+            "ph": "X",
+            "dur": 26
+        },
+        {
+            "name": "cross_entropy/Slice/begin",
+            "pid": 1,
+            "ts": 1503674449517682,
+            "cat": "DataFlow",
+            "tid": 1,
+            "ph": "s",
+            "id": 71
+        },
+        {
+            "name": "cross_entropy/Slice/begin",
+            "pid": 1,
+            "ts": 1503674449517693,
+            "cat": "DataFlow",
+            "tid": 3,
+            "ph": "t",
+            "id": 71
+        },
+        {
+            "name": "LogicalAnd",
+            "args": {
+                "input0": "train/gradients/layer1/taco_expression_calculation/TacoExprOp_grad/case/and_not_0/LogicalAnd",
+                "input1": "train/gradients/layer1/taco_expression_calculation/TacoExprOp_grad/case/not_1/LogicalNot",
+                "name": "train/gradients/layer1/taco_expression_calculation/TacoExprOp_grad/case/and_not_1/LogicalAnd",
+                "op": "LogicalAnd"
+            },
+            "pid": 1,
+            "ts": 1503674449517697,
+            "cat": "Op",
+            "tid": 4,
+            "ph": "X",
+            "dur": 42
+        },
+        {
+            "name": "train/gradients/layer1/taco_expression_calculation/TacoExprOp_grad/case/and_not_0/LogicalAnd",
+            "pid": 1,
+            "ts": 1503674449517684,
+            "cat": "DataFlow",
+            "tid": 2,
+            "ph": "s",
+            "id": 72
+        },
+        {
+            "name": "train/gradients/layer1/taco_expression_calculation/TacoExprOp_grad/case/and_not_0/LogicalAnd",
+            "pid": 1,
+            "ts": 1503674449517697,
+            "cat": "DataFlow",
+            "tid": 4,
+            "ph": "t",
+            "id": 72
+        },
+        {
+            "name": "train/gradients/layer1/taco_expression_calculation/TacoExprOp_grad/case/not_1/LogicalNot",
+            "pid": 1,
+            "ts": 1503674449517661,
+            "cat": "DataFlow",
+            "tid": 0,
+            "ph": "s",
+            "id": 73
+        },
+        {
+            "name": "train/gradients/layer1/taco_expression_calculation/TacoExprOp_grad/case/not_1/LogicalNot",
+            "pid": 1,
+            "ts": 1503674449517697,
+            "cat": "DataFlow",
+            "tid": 4,
+            "ph": "t",
+            "id": 73
+        },
+        {
+            "name": "ConcatV2",
+            "args": {
+                "input2": "cross_entropy/concat/axis",
+                "input0": "cross_entropy/concat/values_0",
+                "input1": "cross_entropy/Slice",
+                "name": "cross_entropy/concat",
+                "op": "ConcatV2"
+            },
+            "pid": 1,
+            "ts": 1503674449517728,
+            "cat": "Op",
+            "tid": 0,
+            "ph": "X",
+            "dur": 16
+        },
+        {
+            "name": "cross_entropy/Slice",
+            "pid": 1,
+            "ts": 1503674449517719,
+            "cat": "DataFlow",
+            "tid": 3,
+            "ph": "s",
+            "id": 74
+        },
+        {
+            "name": "cross_entropy/Slice",
+            "pid": 1,
+            "ts": 1503674449517728,
+            "cat": "DataFlow",
+            "tid": 0,
+            "ph": "t",
+            "id": 74
+        },
+        {
+            "name": "Const",
+            "args": {
+                "input0": "^train/gradients/layer1/taco_expression_calculation/TacoExprOp_grad/case/If_2/switch_t",
+                "name": "train/gradients/layer1/taco_expression_calculation/TacoExprOp_grad/case/If_2/Const",
+                "op": "Const"
+            },
+            "pid": 1,
+            "ts": 1503674449517723,
+            "cat": "Op",
+            "tid": 1,
+            "ph": "X",
+            "dur": 21
+        },
+        {
+            "name": "Switch",
+            "args": {
+                "input0": "train/gradients/layer1/taco_expression_calculation/TacoExprOp_grad/case/and_not_1/LogicalAnd",
+                "input1": "train/gradients/layer1/taco_expression_calculation/TacoExprOp_grad/case/and_not_1/LogicalAnd",
+                "name": "train/gradients/layer1/taco_expression_calculation/TacoExprOp_grad/case/If_0/Switch",
+                "op": "Switch"
+            },
+            "pid": 1,
+            "ts": 1503674449517748,
+            "cat": "Op",
+            "tid": 0,
+            "ph": "X",
+            "dur": 8
+        },
+        {
+            "name": "train/gradients/layer1/taco_expression_calculation/TacoExprOp_grad/case/and_not_1/LogicalAnd",
+            "pid": 1,
+            "ts": 1503674449517739,
+            "cat": "DataFlow",
+            "tid": 4,
+            "ph": "s",
+            "id": 75
+        },
+        {
+            "name": "train/gradients/layer1/taco_expression_calculation/TacoExprOp_grad/case/and_not_1/LogicalAnd",
+            "pid": 1,
+            "ts": 1503674449517748,
+            "cat": "DataFlow",
+            "tid": 0,
+            "ph": "t",
+            "id": 75
+        },
+        {
+            "name": "train/gradients/layer1/taco_expression_calculation/TacoExprOp_grad/case/and_not_1/LogicalAnd",
+            "pid": 1,
+            "ts": 1503674449517739,
+            "cat": "DataFlow",
+            "tid": 4,
+            "ph": "s",
+            "id": 76
+        },
+        {
+            "name": "train/gradients/layer1/taco_expression_calculation/TacoExprOp_grad/case/and_not_1/LogicalAnd",
+            "pid": 1,
+            "ts": 1503674449517748,
+            "cat": "DataFlow",
+            "tid": 0,
+            "ph": "t",
+            "id": 76
+        },
+        {
+            "name": "Reshape",
+            "args": {
+                "input0": "layer1/bias/add",
+                "input1": "cross_entropy/concat",
+                "name": "cross_entropy/Reshape",
+                "op": "Reshape"
+            },
+            "pid": 1,
+            "ts": 1503674449517755,
+            "cat": "Op",
+            "tid": 1,
+            "ph": "X",
+            "dur": 9
+        },
+        {
+            "name": "layer1/bias/add",
+            "pid": 1,
+            "ts": 1503674449517609,
+            "cat": "DataFlow",
+            "tid": 0,
+            "ph": "s",
+            "id": 77
+        },
+        {
+            "name": "layer1/bias/add",
+            "pid": 1,
+            "ts": 1503674449517755,
+            "cat": "DataFlow",
+            "tid": 1,
+            "ph": "t",
+            "id": 77
+        },
+        {
+            "name": "cross_entropy/concat",
+            "pid": 1,
+            "ts": 1503674449517744,
+            "cat": "DataFlow",
+            "tid": 0,
+            "ph": "s",
+            "id": 78
+        },
+        {
+            "name": "cross_entropy/concat",
+            "pid": 1,
+            "ts": 1503674449517755,
+            "cat": "DataFlow",
+            "tid": 1,
+            "ph": "t",
+            "id": 78
+        },
+        {
+            "name": "Const",
+            "args": {
+                "input0": "^train/gradients/layer1/taco_expression_calculation/TacoExprOp_grad/case/If_2/switch_t",
+                "name": "train/gradients/layer1/taco_expression_calculation/TacoExprOp_grad/case/If_2/Const_1",
+                "op": "Const"
+            },
+            "pid": 1,
+            "ts": 1503674449517760,
+            "cat": "Op",
+            "tid": 0,
+            "ph": "X",
+            "dur": 6
+        },
+        {
+            "name": "Identity",
+            "args": {
+                "input0": "train/gradients/layer1/taco_expression_calculation/TacoExprOp_grad/case/If_0/Switch",
+                "name": "train/gradients/layer1/taco_expression_calculation/TacoExprOp_grad/case/If_0/switch_f",
+                "op": "Identity"
+            },
+            "pid": 1,
+            "ts": 1503674449517761,
+            "cat": "Op",
+            "tid": 2,
+            "ph": "X",
+            "dur": 7
+        },
+        {
+            "name": "train/gradients/layer1/taco_expression_calculation/TacoExprOp_grad/case/If_0/Switch",
+            "pid": 1,
+            "ts": 1503674449517756,
+            "cat": "DataFlow",
+            "tid": 0,
+            "ph": "s",
+            "id": 79
+        },
+        {
+            "name": "train/gradients/layer1/taco_expression_calculation/TacoExprOp_grad/case/If_0/Switch",
+            "pid": 1,
+            "ts": 1503674449517761,
+            "cat": "DataFlow",
+            "tid": 2,
+            "ph": "t",
+            "id": 79
+        },
+        {
+            "name": "Const",
+            "args": {
+                "input0": "^train/gradients/layer1/taco_expression_calculation/TacoExprOp_grad/case/If_2/switch_t",
+                "name": "train/gradients/layer1/taco_expression_calculation/TacoExprOp_grad/case/If_2/Const_3",
+                "op": "Const"
+            },
+            "pid": 1,
+            "ts": 1503674449517769,
+            "cat": "Op",
+            "tid": 0,
+            "ph": "X",
+            "dur": 4
+        },
+        {
+            "name": "Const",
+            "args": {
+                "input0": "^train/gradients/layer1/taco_expression_calculation/TacoExprOp_grad/case/If_0/switch_f",
+                "name": "train/gradients/layer1/taco_expression_calculation/TacoExprOp_grad/case/If_0/Const_14",
+                "op": "Const"
+            },
+            "pid": 1,
+            "ts": 1503674449517773,
+            "cat": "Op",
+            "tid": 1,
+            "ph": "X",
+            "dur": 5
+        },
+        {
+            "name": "Const",
+            "args": {
+                "input0": "^train/gradients/layer1/taco_expression_calculation/TacoExprOp_grad/case/If_2/switch_t",
+                "name": "train/gradients/layer1/taco_expression_calculation/TacoExprOp_grad/case/If_2/Const_4",
+                "op": "Const"
+            },
+            "pid": 1,
+            "ts": 1503674449517775,
+            "cat": "Op",
+            "tid": 0,
+            "ph": "X",
+            "dur": 4
+        },
+        {
+            "name": "Const",
+            "args": {
+                "input0": "^train/gradients/layer1/taco_expression_calculation/TacoExprOp_grad/case/If_0/switch_f",
+                "name": "train/gradients/layer1/taco_expression_calculation/TacoExprOp_grad/case/If_0/Const_15",
+                "op": "Const"
+            },
+            "pid": 1,
+            "ts": 1503674449517782,
+            "cat": "Op",
+            "tid": 0,
+            "ph": "X",
+            "dur": 5
+        },
+        {
+            "name": "Const",
+            "args": {
+                "input0": "^train/gradients/layer1/taco_expression_calculation/TacoExprOp_grad/case/If_2/switch_t",
+                "name": "train/gradients/layer1/taco_expression_calculation/TacoExprOp_grad/case/If_2/Const_5",
+                "op": "Const"
+            },
+            "pid": 1,
+            "ts": 1503674449517784,
+            "cat": "Op",
+            "tid": 1,
+            "ph": "X",
+            "dur": 5
+        },
+        {
+            "name": "Const",
+            "args": {
+                "input0": "^train/gradients/layer1/taco_expression_calculation/TacoExprOp_grad/case/If_0/switch_f",
+                "name": "train/gradients/layer1/taco_expression_calculation/TacoExprOp_grad/case/If_0/Const_16",
+                "op": "Const"
+            },
+            "pid": 1,
+            "ts": 1503674449517789,
+            "cat": "Op",
+            "tid": 0,
+            "ph": "X",
+            "dur": 5
+        },
+        {
+            "name": "Const",
+            "args": {
+                "input0": "^train/gradients/layer1/taco_expression_calculation/TacoExprOp_grad/case/If_2/switch_t",
+                "name": "train/gradients/layer1/taco_expression_calculation/TacoExprOp_grad/case/If_2/Const_6",
+                "op": "Const"
+            },
+            "pid": 1,
+            "ts": 1503674449517792,
+            "cat": "Op",
+            "tid": 1,
+            "ph": "X",
+            "dur": 5
+        },
+        {
+            "name": "SoftmaxCrossEntropyWithLogits",
+            "args": {
+                "input0": "cross_entropy/Reshape",
+                "input1": "cross_entropy/Reshape_1",
+                "name": "cross_entropy/SoftmaxCrossEntropyWithLogits",
+                "op": "SoftmaxCrossEntropyWithLogits"
+            },
+            "pid": 1,
+            "ts": 1503674449517768,
+            "cat": "Op",
+            "tid": 3,
+            "ph": "X",
+            "dur": 29
+        },
+        {
+            "name": "cross_entropy/Reshape",
+            "pid": 1,
+            "ts": 1503674449517764,
+            "cat": "DataFlow",
+            "tid": 1,
+            "ph": "s",
+            "id": 80
+        },
+        {
+            "name": "cross_entropy/Reshape",
+            "pid": 1,
+            "ts": 1503674449517768,
+            "cat": "DataFlow",
+            "tid": 3,
+            "ph": "t",
+            "id": 80
+        },
+        {
+            "name": "cross_entropy/Reshape_1",
+            "pid": 1,
+            "ts": 1503674449516587,
+            "cat": "DataFlow",
+            "tid": 0,
+            "ph": "s",
+            "id": 81
+        },
+        {
+            "name": "cross_entropy/Reshape_1",
+            "pid": 1,
+            "ts": 1503674449517768,
+            "cat": "DataFlow",
+            "tid": 3,
+            "ph": "t",
+            "id": 81
+        },
+        {
+            "name": "Const",
+            "args": {
+                "input0": "^train/gradients/layer1/taco_expression_calculation/TacoExprOp_grad/case/If_0/switch_f",
+                "name": "train/gradients/layer1/taco_expression_calculation/TacoExprOp_grad/case/If_0/Const_17",
+                "op": "Const"
+            },
+            "pid": 1,
+            "ts": 1503674449517797,
+            "cat": "Op",
+            "tid": 0,
+            "ph": "X",
+            "dur": 5
+        },
+        {
+            "name": "Shape",
+            "args": {
+                "input0": "cross_entropy/SoftmaxCrossEntropyWithLogits",
+                "name": "train/gradients/cross_entropy/Reshape_2_grad/Shape",
+                "op": "Shape"
+            },
+            "pid": 1,
+            "ts": 1503674449517801,
+            "cat": "Op",
+            "tid": 1,
+            "ph": "X",
+            "dur": 8
+        },
+        {
+            "name": "cross_entropy/SoftmaxCrossEntropyWithLogits",
+            "pid": 1,
+            "ts": 1503674449517797,
+            "cat": "DataFlow",
+            "tid": 3,
+            "ph": "s",
+            "id": 82
+        },
+        {
+            "name": "cross_entropy/SoftmaxCrossEntropyWithLogits",
+            "pid": 1,
+            "ts": 1503674449517801,
+            "cat": "DataFlow",
+            "tid": 1,
+            "ph": "t",
+            "id": 82
+        },
+        {
+            "name": "Const",
+            "args": {
+                "input0": "^train/gradients/layer1/taco_expression_calculation/TacoExprOp_grad/case/If_0/switch_f",
+                "name": "train/gradients/layer1/taco_expression_calculation/TacoExprOp_grad/case/If_0/Const_18",
+                "op": "Const"
+            },
+            "pid": 1,
+            "ts": 1503674449517805,
+            "cat": "Op",
+            "tid": 0,
+            "ph": "X",
+            "dur": 5
+        },
+        {
+            "name": "Merge",
+            "args": {
+                "input0": "train/gradients/layer1/taco_expression_calculation/TacoExprOp_grad/case/If_2/Switch_1",
+                "input1": "train/gradients/layer1/taco_expression_calculation/TacoExprOp_grad/case/If_2/Const",
+                "name": "train/gradients/layer1/taco_expression_calculation/TacoExprOp_grad/case/If_2/Merge",
+                "op": "Merge"
+            },
+            "pid": 1,
+            "ts": 1503674449517800,
+            "cat": "Op",
+            "tid": 2,
+            "ph": "X",
+            "dur": 9
+        },
+        {
+            "name": "train/gradients/layer1/taco_expression_calculation/TacoExprOp_grad/case/If_2/Switch_1",
+            "pid": 1,
+            "ts": 1503674449518039,
+            "cat": "DataFlow",
+            "tid": 0,
+            "ph": "s",
+            "id": 83
+        },
+        {
+            "name": "train/gradients/layer1/taco_expression_calculation/TacoExprOp_grad/case/If_2/Switch_1",
+            "pid": 1,
+            "ts": 1503674449517800,
+            "cat": "DataFlow",
+            "tid": 2,
+            "ph": "t",
+            "id": 83
+        },
+        {
+            "name": "train/gradients/layer1/taco_expression_calculation/TacoExprOp_grad/case/If_2/Const",
+            "pid": 1,
+            "ts": 1503674449517744,
+            "cat": "DataFlow",
+            "tid": 1,
+            "ph": "s",
+            "id": 84
+        },
+        {
+            "name": "train/gradients/layer1/taco_expression_calculation/TacoExprOp_grad/case/If_2/Const",
+            "pid": 1,
+            "ts": 1503674449517800,
+            "cat": "DataFlow",
+            "tid": 2,
+            "ph": "t",
+            "id": 84
+        },
+        {
+            "name": "Const",
+            "args": {
+                "input0": "^train/gradients/layer1/taco_expression_calculation/TacoExprOp_grad/case/If_0/switch_f",
+                "name": "train/gradients/layer1/taco_expression_calculation/TacoExprOp_grad/case/If_0/Const_19",
+                "op": "Const"
+            },
+            "pid": 1,
+            "ts": 1503674449517815,
+            "cat": "Op",
+            "tid": 0,
+            "ph": "X",
+            "dur": 4
+        },
+        {
+            "name": "Reshape",
+            "args": {
+                "input0": "cross_entropy/SoftmaxCrossEntropyWithLogits",
+                "input1": "cross_entropy/Slice_2",
+                "name": "cross_entropy/Reshape_2",
+                "op": "Reshape"
+            },
+            "pid": 1,
+            "ts": 1503674449517818,
+            "cat": "Op",
+            "tid": 1,
+            "ph": "X",
+            "dur": 6
+        },
+        {
+            "name": "cross_entropy/SoftmaxCrossEntropyWithLogits",
+            "pid": 1,
+            "ts": 1503674449517797,
+            "cat": "DataFlow",
+            "tid": 3,
+            "ph": "s",
+            "id": 85
+        },
+        {
+            "name": "cross_entropy/SoftmaxCrossEntropyWithLogits",
+            "pid": 1,
+            "ts": 1503674449517818,
+            "cat": "DataFlow",
+            "tid": 1,
+            "ph": "t",
+            "id": 85
+        },
+        {
+            "name": "cross_entropy/Slice_2",
+            "pid": 1,
+            "ts": 1503674449517701,
+            "cat": "DataFlow",
+            "tid": 2,
+            "ph": "s",
+            "id": 86
+        },
+        {
+            "name": "cross_entropy/Slice_2",
+            "pid": 1,
+            "ts": 1503674449517818,
+            "cat": "DataFlow",
+            "tid": 1,
+            "ph": "t",
+            "id": 86
+        },
+        {
+            "name": "Const",
+            "args": {
+                "input0": "^train/gradients/layer1/taco_expression_calculation/TacoExprOp_grad/case/If_0/switch_f",
+                "name": "train/gradients/layer1/taco_expression_calculation/TacoExprOp_grad/case/If_0/Const_20",
+                "op": "Const"
+            },
+            "pid": 1,
+            "ts": 1503674449517823,
+            "cat": "Op",
+            "tid": 0,
+            "ph": "X",
+            "dur": 4
+        },
+        {
+            "name": "Merge",
+            "args": {
+                "input0": "train/gradients/layer1/taco_expression_calculation/TacoExprOp_grad/case/If_2/Switch_2",
+                "input1": "train/gradients/layer1/taco_expression_calculation/TacoExprOp_grad/case/If_2/Const_1",
+                "name": "train/gradients/layer1/taco_expression_calculation/TacoExprOp_grad/case/If_2/Merge_1",
+                "op": "Merge"
+            },
+            "pid": 1,
+            "ts": 1503674449517821,
+            "cat": "Op",
+            "tid": 2,
+            "ph": "X",
+            "dur": 8
+        },
+        {
+            "name": "train/gradients/layer1/taco_expression_calculation/TacoExprOp_grad/case/If_2/Switch_2",
+            "pid": 1,
+            "ts": 1503674449518045,
+            "cat": "DataFlow",
+            "tid": 0,
+            "ph": "s",
+            "id": 87
+        },
+        {
+            "name": "train/gradients/layer1/taco_expression_calculation/TacoExprOp_grad/case/If_2/Switch_2",
+            "pid": 1,
+            "ts": 1503674449517821,
+            "cat": "DataFlow",
+            "tid": 2,
+            "ph": "t",
+            "id": 87
+        },
+        {
+            "name": "train/gradients/layer1/taco_expression_calculation/TacoExprOp_grad/case/If_2/Const_1",
+            "pid": 1,
+            "ts": 1503674449517766,
+            "cat": "DataFlow",
+            "tid": 0,
+            "ph": "s",
+            "id": 88
+        },
+        {
+            "name": "train/gradients/layer1/taco_expression_calculation/TacoExprOp_grad/case/If_2/Const_1",
+            "pid": 1,
+            "ts": 1503674449517821,
+            "cat": "DataFlow",
+            "tid": 2,
+            "ph": "t",
+            "id": 88
+        },
+        {
+            "name": "Shape",
+            "args": {
+                "input0": "cross_entropy/Reshape_2",
+                "name": "train/gradients/Shape",
+                "op": "Shape"
+            },
+            "pid": 1,
+            "ts": 1503674449517827,
+            "cat": "Op",
+            "tid": 1,
+            "ph": "X",
+            "dur": 6
+        },
+        {
+            "name": "Merge",
+            "args": {
+                "input0": "train/gradients/layer1/taco_expression_calculation/TacoExprOp_grad/case/If_2/Switch_4",
+                "input1": "train/gradients/layer1/taco_expression_calculation/TacoExprOp_grad/case/If_2/Const_3",
+                "name": "train/gradients/layer1/taco_expression_calculation/TacoExprOp_grad/case/If_2/Merge_3",
+                "op": "Merge"
+            },
+            "pid": 1,
+            "ts": 1503674449517832,
+            "cat": "Op",
+            "tid": 0,
+            "ph": "X",
+            "dur": 6
+        },
+        {
+            "name": "Merge",
+            "args": {
+                "input0": "train/gradients/layer1/taco_expression_calculation/TacoExprOp_grad/case/If_0/Const_14",
+                "input1": "train/gradients/layer1/taco_expression_calculation/TacoExprOp_grad/case/If_0/Const",
+                "name": "train/gradients/layer1/taco_expression_calculation/TacoExprOp_grad/case/If_0/Merge",
+                "op": "Merge"
+            },
+            "pid": 1,
+            "ts": 1503674449517831,
+            "cat": "Op",
+            "tid": 2,
+            "ph": "X",
+            "dur": 9
+        },
+        {
+            "name": "train/gradients/layer1/taco_expression_calculation/TacoExprOp_grad/case/If_0/Const_14",
+            "pid": 1,
+            "ts": 1503674449517778,
+            "cat": "DataFlow",
+            "tid": 1,
+            "ph": "s",
+            "id": 89
+        },
+        {
+            "name": "train/gradients/layer1/taco_expression_calculation/TacoExprOp_grad/case/If_0/Const_14",
+            "pid": 1,
+            "ts": 1503674449517831,
+            "cat": "DataFlow",
+            "tid": 2,
+            "ph": "t",
+            "id": 89
+        },
+        {
+            "name": "Fill",
+            "args": {
+                "input0": "train/gradients/Shape",
+                "input1": "train/gradients/Const",
+                "name": "train/gradients/Fill",
+                "op": "Fill"
+            },
+            "pid": 1,
+            "ts": 1503674449517837,
+            "cat": "Op",
+            "tid": 1,
+            "ph": "X",
+            "dur": 8
+        },
+        {
+            "name": "train/gradients/Const",
+            "pid": 1,
+            "ts": 1503674449516161,
+            "cat": "DataFlow",
+            "tid": 0,
+            "ph": "s",
+            "id": 90
+        },
+        {
+            "name": "train/gradients/Const",
+            "pid": 1,
+            "ts": 1503674449517837,
+            "cat": "DataFlow",
+            "tid": 1,
+            "ph": "t",
+            "id": 90
+        },
+        {
+            "name": "Merge",
+            "args": {
+                "input0": "train/gradients/layer1/taco_expression_calculation/TacoExprOp_grad/case/If_2/Switch_5",
+                "input1": "train/gradients/layer1/taco_expression_calculation/TacoExprOp_grad/case/If_2/Const_4",
+                "name": "train/gradients/layer1/taco_expression_calculation/TacoExprOp_grad/case/If_2/Merge_4",
+                "op": "Merge"
+            },
+            "pid": 1,
+            "ts": 1503674449517841,
+            "cat": "Op",
+            "tid": 0,
+            "ph": "X",
+            "dur": 5
+        },
+        {
+            "name": "Merge",
+            "args": {
+                "input0": "train/gradients/layer1/taco_expression_calculation/TacoExprOp_grad/case/If_0/Const_15",
+                "input1": "train/gradients/layer1/taco_expression_calculation/TacoExprOp_grad/case/If_0/Const_1",
+                "name": "train/gradients/layer1/taco_expression_calculation/TacoExprOp_grad/case/If_0/Merge_1",
+                "op": "Merge"
+            },
+            "pid": 1,
+            "ts": 1503674449517846,
+            "cat": "Op",
+            "tid": 1,
+            "ph": "X",
+            "dur": 7
+        },
+        {
+            "name": "train/gradients/layer1/taco_expression_calculation/TacoExprOp_grad/case/If_0/Const_15",
+            "pid": 1,
+            "ts": 1503674449517787,
+            "cat": "DataFlow",
+            "tid": 0,
+            "ph": "s",
+            "id": 91
+        },
+        {
+            "name": "train/gradients/layer1/taco_expression_calculation/TacoExprOp_grad/case/If_0/Const_15",
+            "pid": 1,
+            "ts": 1503674449517846,
+            "cat": "DataFlow",
+            "tid": 1,
+            "ph": "t",
+            "id": 91
+        },
+        {
+            "name": "Reshape",
+            "args": {
+                "input0": "train/gradients/Fill",
+                "input1": "train/gradients/cross_entropy/Reshape_2_grad/Shape",
+                "name": "train/gradients/cross_entropy/Reshape_2_grad/Reshape",
+                "op": "Reshape"
+            },
+            "pid": 1,
+            "ts": 1503674449517849,
+            "cat": "Op",
+            "tid": 0,
+            "ph": "X",
+            "dur": 6
+        },
+        {
+            "name": "train/gradients/Fill",
+            "pid": 1,
+            "ts": 1503674449517845,
+            "cat": "DataFlow",
+            "tid": 1,
+            "ph": "s",
+            "id": 92
+        },
+        {
+            "name": "train/gradients/Fill",
+            "pid": 1,
+            "ts": 1503674449517849,
+            "cat": "DataFlow",
+            "tid": 0,
+            "ph": "t",
+            "id": 92
+        },
+        {
+            "name": "train/gradients/cross_entropy/Reshape_2_grad/Shape",
+            "pid": 1,
+            "ts": 1503674449517809,
+            "cat": "DataFlow",
+            "tid": 1,
+            "ph": "s",
+            "id": 93
+        },
+        {
+            "name": "train/gradients/cross_entropy/Reshape_2_grad/Shape",
+            "pid": 1,
+            "ts": 1503674449517849,
+            "cat": "DataFlow",
+            "tid": 0,
+            "ph": "t",
+            "id": 93
+        },
+        {
+            "name": "Merge",
+            "args": {
+                "input0": "train/gradients/layer1/taco_expression_calculation/TacoExprOp_grad/case/If_2/Switch_6",
+                "input1": "train/gradients/layer1/taco_expression_calculation/TacoExprOp_grad/case/If_2/Const_5",
+                "name": "train/gradients/layer1/taco_expression_calculation/TacoExprOp_grad/case/If_2/Merge_5",
+                "op": "Merge"
+            },
+            "pid": 1,
+            "ts": 1503674449517852,
+            "cat": "Op",
+            "tid": 2,
+            "ph": "X",
+            "dur": 7
+        },
+        {
+            "name": "train/gradients/layer1/taco_expression_calculation/TacoExprOp_grad/case/If_2/Switch_6",
+            "pid": 1,
+            "ts": 1503674449518072,
+            "cat": "DataFlow",
+            "tid": 0,
+            "ph": "s",
+            "id": 94
+        },
+        {
+            "name": "train/gradients/layer1/taco_expression_calculation/TacoExprOp_grad/case/If_2/Switch_6",
+            "pid": 1,
+            "ts": 1503674449517852,
+            "cat": "DataFlow",
+            "tid": 2,
+            "ph": "t",
+            "id": 94
+        },
+        {
+            "name": "train/gradients/layer1/taco_expression_calculation/TacoExprOp_grad/case/If_2/Const_5",
+            "pid": 1,
+            "ts": 1503674449517789,
+            "cat": "DataFlow",
+            "tid": 1,
+            "ph": "s",
+            "id": 95
+        },
+        {
+            "name": "train/gradients/layer1/taco_expression_calculation/TacoExprOp_grad/case/If_2/Const_5",
+            "pid": 1,
+            "ts": 1503674449517852,
+            "cat": "DataFlow",
+            "tid": 2,
+            "ph": "t",
+            "id": 95
+        },
+        {
+            "name": "Merge",
+            "args": {
+                "input0": "train/gradients/layer1/taco_expression_calculation/TacoExprOp_grad/case/If_0/Const_16",
+                "input1": "train/gradients/layer1/taco_expression_calculation/TacoExprOp_grad/case/If_0/Const_2",
+                "name": "train/gradients/layer1/taco_expression_calculation/TacoExprOp_grad/case/If_0/Merge_2",
+                "op": "Merge"
+            },
+            "pid": 1,
+            "ts": 1503674449517857,
+            "cat": "Op",
+            "tid": 0,
+            "ph": "X",
+            "dur": 6
+        },
+        {
+            "name": "ExpandDims",
+            "args": {
+                "input0": "train/gradients/cross_entropy/Reshape_2_grad/Reshape",
+                "input1": "train/gradients/cross_entropy/SoftmaxCrossEntropyWithLogits_grad/ExpandDims/dim",
+                "name": "train/gradients/cross_entropy/SoftmaxCrossEntropyWithLogits_grad/ExpandDims",
+                "op": "ExpandDims"
+            },
+            "pid": 1,
+            "ts": 1503674449517859,
+            "cat": "Op",
+            "tid": 1,
+            "ph": "X",
+            "dur": 7
+        },
+        {
+            "name": "train/gradients/cross_entropy/Reshape_2_grad/Reshape",
+            "pid": 1,
+            "ts": 1503674449517855,
+            "cat": "DataFlow",
+            "tid": 0,
+            "ph": "s",
+            "id": 96
+        },
+        {
+            "name": "train/gradients/cross_entropy/Reshape_2_grad/Reshape",
+            "pid": 1,
+            "ts": 1503674449517859,
+            "cat": "DataFlow",
+            "tid": 1,
+            "ph": "t",
+            "id": 96
+        },
+        {
+            "name": "Merge",
+            "args": {
+                "input0": "train/gradients/layer1/taco_expression_calculation/TacoExprOp_grad/case/If_2/Switch_7",
+                "input1": "train/gradients/layer1/taco_expression_calculation/TacoExprOp_grad/case/If_2/Const_6",
+                "name": "train/gradients/layer1/taco_expression_calculation/TacoExprOp_grad/case/If_2/Merge_6",
+                "op": "Merge"
+            },
+            "pid": 1,
+            "ts": 1503674449517862,
+            "cat": "Op",
+            "tid": 2,
+            "ph": "X",
+            "dur": 7
+        },
+        {
+            "name": "train/gradients/layer1/taco_expression_calculation/TacoExprOp_grad/case/If_2/Switch_7",
+            "pid": 1,
+            "ts": 1503674449518081,
+            "cat": "DataFlow",
+            "tid": 1,
+            "ph": "s",
+            "id": 97
+        },
+        {
+            "name": "train/gradients/layer1/taco_expression_calculation/TacoExprOp_grad/case/If_2/Switch_7",
+            "pid": 1,
+            "ts": 1503674449517862,
+            "cat": "DataFlow",
+            "tid": 2,
+            "ph": "t",
+            "id": 97
+        },
+        {
+            "name": "train/gradients/layer1/taco_expression_calculation/TacoExprOp_grad/case/If_2/Const_6",
+            "pid": 1,
+            "ts": 1503674449517797,
+            "cat": "DataFlow",
+            "tid": 1,
+            "ph": "s",
+            "id": 98
+        },
+        {
+            "name": "train/gradients/layer1/taco_expression_calculation/TacoExprOp_grad/case/If_2/Const_6",
+            "pid": 1,
+            "ts": 1503674449517862,
+            "cat": "DataFlow",
+            "tid": 2,
+            "ph": "t",
+            "id": 98
+        },
+        {
+            "name": "Merge",
+            "args": {
+                "input0": "train/gradients/layer1/taco_expression_calculation/TacoExprOp_grad/case/If_0/Const_17",
+                "input1": "train/gradients/layer1/taco_expression_calculation/TacoExprOp_grad/case/If_0/Const_3",
+                "name": "train/gradients/layer1/taco_expression_calculation/TacoExprOp_grad/case/If_0/Merge_3",
+                "op": "Merge"
+            },
+            "pid": 1,
+            "ts": 1503674449517866,
+            "cat": "Op",
+            "tid": 0,
+            "ph": "X",
+            "dur": 7
+        },
+        {
+            "name": "Mul",
+            "args": {
+                "input0": "train/gradients/cross_entropy/SoftmaxCrossEntropyWithLogits_grad/ExpandDims",
+                "input1": "cross_entropy/SoftmaxCrossEntropyWithLogits:1",
+                "name": "train/gradients/cross_entropy/SoftmaxCrossEntropyWithLogits_grad/mul",
+                "op": "Mul"
+            },
+            "pid": 1,
+            "ts": 1503674449517870,
+            "cat": "Op",
+            "tid": 1,
+            "ph": "X",
+            "dur": 11
+        },
+        {
+            "name": "cross_entropy/SoftmaxCrossEntropyWithLogits:1",
+            "pid": 1,
+            "ts": 1503674449517797,
+            "cat": "DataFlow",
+            "tid": 3,
+            "ph": "s",
+            "id": 99
+        },
+        {
+            "name": "cross_entropy/SoftmaxCrossEntropyWithLogits:1",
+            "pid": 1,
+            "ts": 1503674449517870,
+            "cat": "DataFlow",
+            "tid": 1,
+            "ph": "t",
+            "id": 99
+        },
+        {
+            "name": "Merge",
+            "args": {
+                "input0": "train/gradients/layer1/taco_expression_calculation/TacoExprOp_grad/case/If_0/Const_18",
+                "input1": "train/gradients/layer1/taco_expression_calculation/TacoExprOp_grad/case/If_0/Const_4",
+                "name": "train/gradients/layer1/taco_expression_calculation/TacoExprOp_grad/case/If_0/Merge_4",
+                "op": "Merge"
+            },
+            "pid": 1,
+            "ts": 1503674449517876,
+            "cat": "Op",
+            "tid": 0,
+            "ph": "X",
+            "dur": 7
+        },
+        {
+            "name": "Reshape",
+            "args": {
+                "input0": "train/gradients/cross_entropy/SoftmaxCrossEntropyWithLogits_grad/mul",
+                "input1": "train/gradients/cross_entropy/Reshape_grad/Shape",
+                "name": "train/gradients/cross_entropy/Reshape_grad/Reshape",
+                "op": "Reshape"
+            },
+            "pid": 1,
+            "ts": 1503674449517885,
+            "cat": "Op",
+            "tid": 0,
+            "ph": "X",
+            "dur": 7
+        },
+        {
+            "name": "train/gradients/cross_entropy/SoftmaxCrossEntropyWithLogits_grad/mul",
+            "pid": 1,
+            "ts": 1503674449517881,
+            "cat": "DataFlow",
+            "tid": 1,
+            "ph": "s",
+            "id": 100
+        },
+        {
+            "name": "train/gradients/cross_entropy/SoftmaxCrossEntropyWithLogits_grad/mul",
+            "pid": 1,
+            "ts": 1503674449517885,
+            "cat": "DataFlow",
+            "tid": 0,
+            "ph": "t",
+            "id": 100
+        },
+        {
+            "name": "Merge",
+            "args": {
+                "input0": "train/gradients/layer1/taco_expression_calculation/TacoExprOp_grad/case/If_0/Const_19",
+                "input1": "train/gradients/layer1/taco_expression_calculation/TacoExprOp_grad/case/If_0/Const_5",
+                "name": "train/gradients/layer1/taco_expression_calculation/TacoExprOp_grad/case/If_0/Merge_5",
+                "op": "Merge"
+            },
+            "pid": 1,
+            "ts": 1503674449517887,
+            "cat": "Op",
+            "tid": 1,
+            "ph": "X",
+            "dur": 8
+        },
+        {
+            "name": "train/gradients/layer1/taco_expression_calculation/TacoExprOp_grad/case/If_0/Const_19",
+            "pid": 1,
+            "ts": 1503674449517819,
+            "cat": "DataFlow",
+            "tid": 0,
+            "ph": "s",
+            "id": 101
+        },
+        {
+            "name": "train/gradients/layer1/taco_expression_calculation/TacoExprOp_grad/case/If_0/Const_19",
+            "pid": 1,
+            "ts": 1503674449517887,
+            "cat": "DataFlow",
+            "tid": 1,
+            "ph": "t",
+            "id": 101
+        },
+        {
+            "name": "Merge",
+            "args": {
+                "input0": "train/gradients/layer1/taco_expression_calculation/TacoExprOp_grad/case/If_0/Const_20",
+                "input1": "train/gradients/layer1/taco_expression_calculation/TacoExprOp_grad/case/If_0/Const_6",
+                "name": "train/gradients/layer1/taco_expression_calculation/TacoExprOp_grad/case/If_0/Merge_6",
+                "op": "Merge"
+            },
+            "pid": 1,
+            "ts": 1503674449517898,
+            "cat": "Op",
+            "tid": 0,
+            "ph": "X",
+            "dur": 6
+        },
+        {
+            "name": "Sum",
+            "args": {
+                "input0": "train/gradients/cross_entropy/Reshape_grad/Reshape",
+                "input1": "train/gradients/layer1/bias/add_grad/BroadcastGradientArgs",
+                "name": "train/gradients/layer1/bias/add_grad/Sum",
+                "op": "Sum"
+            },
+            "pid": 1,
+            "ts": 1503674449517899,
+            "cat": "Op",
+            "tid": 1,
+            "ph": "X",
+            "dur": 8
+        },
+        {
+            "name": "train/gradients/cross_entropy/Reshape_grad/Reshape",
+            "pid": 1,
+            "ts": 1503674449517892,
+            "cat": "DataFlow",
+            "tid": 0,
+            "ph": "s",
+            "id": 102
+        },
+        {
+            "name": "train/gradients/cross_entropy/Reshape_grad/Reshape",
+            "pid": 1,
+            "ts": 1503674449517899,
+            "cat": "DataFlow",
+            "tid": 1,
+            "ph": "t",
+            "id": 102
+        },
+        {
+            "name": "train/gradients/layer1/bias/add_grad/BroadcastGradientArgs",
+            "pid": 1,
+            "ts": 1503674449517593,
+            "cat": "DataFlow",
+            "tid": 0,
+            "ph": "s",
+            "id": 103
+        },
+        {
+            "name": "train/gradients/layer1/bias/add_grad/BroadcastGradientArgs",
+            "pid": 1,
+            "ts": 1503674449517899,
+            "cat": "DataFlow",
+            "tid": 1,
+            "ph": "t",
+            "id": 103
+        },
+        {
+            "name": "Sum",
+            "args": {
+                "input0": "train/gradients/cross_entropy/Reshape_grad/Reshape",
+                "input1": "train/gradients/layer1/bias/add_grad/BroadcastGradientArgs:1",
+                "name": "train/gradients/layer1/bias/add_grad/Sum_1",
+                "op": "Sum"
+            },
+            "pid": 1,
+            "ts": 1503674449517903,
+            "cat": "Op",
+            "tid": 2,
+            "ph": "X",
+            "dur": 8
+        },
+        {
+            "name": "train/gradients/cross_entropy/Reshape_grad/Reshape",
+            "pid": 1,
+            "ts": 1503674449517892,
+            "cat": "DataFlow",
+            "tid": 0,
+            "ph": "s",
+            "id": 104
+        },
+        {
+            "name": "train/gradients/cross_entropy/Reshape_grad/Reshape",
+            "pid": 1,
+            "ts": 1503674449517903,
+            "cat": "DataFlow",
+            "tid": 2,
+            "ph": "t",
+            "id": 104
+        },
+        {
+            "name": "train/gradients/layer1/bias/add_grad/BroadcastGradientArgs:1",
+            "pid": 1,
+            "ts": 1503674449517593,
+            "cat": "DataFlow",
+            "tid": 0,
+            "ph": "s",
+            "id": 105
+        },
+        {
+            "name": "train/gradients/layer1/bias/add_grad/BroadcastGradientArgs:1",
+            "pid": 1,
+            "ts": 1503674449517903,
+            "cat": "DataFlow",
+            "tid": 2,
+            "ph": "t",
+            "id": 105
+        },
+        {
+            "name": "Switch",
+            "args": {
+                "input0": "train/gradients/layer1/taco_expression_calculation/TacoExprOp_grad/case/If_0/Merge",
+                "input1": "train/gradients/layer1/taco_expression_calculation/TacoExprOp_grad/case/If_1/pred_id",
+                "name": "train/gradients/layer1/taco_expression_calculation/TacoExprOp_grad/case/If_1/Switch_1",
+                "op": "Switch"
+            },
+            "pid": 1,
+            "ts": 1503674449517907,
+            "cat": "Op",
+            "tid": 0,
+            "ph": "X",
+            "dur": 5
+        },
+        {
+            "name": "train/gradients/layer1/taco_expression_calculation/TacoExprOp_grad/case/If_0/Merge",
+            "pid": 1,
+            "ts": 1503674449517840,
+            "cat": "DataFlow",
+            "tid": 2,
+            "ph": "s",
+            "id": 106
+        },
+        {
+            "name": "train/gradients/layer1/taco_expression_calculation/TacoExprOp_grad/case/If_0/Merge",
+            "pid": 1,
+            "ts": 1503674449517907,
+            "cat": "DataFlow",
+            "tid": 0,
+            "ph": "t",
+            "id": 106
+        },
+        {
+            "name": "train/gradients/layer1/taco_expression_calculation/TacoExprOp_grad/case/If_1/pred_id",
+            "pid": 1,
+            "ts": 1503674449517722,
+            "cat": "DataFlow",
+            "tid": 1,
+            "ph": "s",
+            "id": 107
+        },
+        {
+            "name": "train/gradients/layer1/taco_expression_calculation/TacoExprOp_grad/case/If_1/pred_id",
+            "pid": 1,
+            "ts": 1503674449517907,
+            "cat": "DataFlow",
+            "tid": 0,
+            "ph": "t",
+            "id": 107
+        },
+        {
+            "name": "Reshape",
+            "args": {
+                "input0": "train/gradients/layer1/bias/add_grad/Sum",
+                "input1": "train/gradients/layer1/bias/add_grad/Shape",
+                "name": "train/gradients/layer1/bias/add_grad/Reshape",
+                "op": "Reshape"
+            },
+            "pid": 1,
+            "ts": 1503674449517910,
+            "cat": "Op",
+            "tid": 1,
+            "ph": "X",
+            "dur": 8
+        },
+        {
+            "name": "train/gradients/layer1/bias/add_grad/Shape",
+            "pid": 1,
+            "ts": 1503674449517582,
+            "cat": "DataFlow",
+            "tid": 0,
+            "ph": "s",
+            "id": 108
+        },
+        {
+            "name": "train/gradients/layer1/bias/add_grad/Shape",
+            "pid": 1,
+            "ts": 1503674449517910,
+            "cat": "DataFlow",
+            "tid": 1,
+            "ph": "t",
+            "id": 108
+        },
+        {
+            "name": "Reshape",
+            "args": {
+                "input0": "train/gradients/layer1/bias/add_grad/Sum_1",
+                "input1": "train/gradients/layer1/bias/add_grad/Shape_1",
+                "name": "train/gradients/layer1/bias/add_grad/Reshape_1",
+                "op": "Reshape"
+            },
+            "pid": 1,
+            "ts": 1503674449517915,
+            "cat": "Op",
+            "tid": 0,
+            "ph": "X",
+            "dur": 4
+        },
+        {
+            "name": "train/gradients/layer1/bias/add_grad/Sum_1",
+            "pid": 1,
+            "ts": 1503674449517911,
+            "cat": "DataFlow",
+            "tid": 2,
+            "ph": "s",
+            "id": 109
+        },
+        {
+            "name": "train/gradients/layer1/bias/add_grad/Sum_1",
+            "pid": 1,
+            "ts": 1503674449517915,
+            "cat": "DataFlow",
+            "tid": 0,
+            "ph": "t",
+            "id": 109
+        },
+        {
+            "name": "Switch",
+            "args": {
+                "input0": "train/gradients/layer1/taco_expression_calculation/TacoExprOp_grad/case/If_0/Merge_1",
+                "input1": "train/gradients/layer1/taco_expression_calculation/TacoExprOp_grad/case/If_1/pred_id",
+                "name": "train/gradients/layer1/taco_expression_calculation/TacoExprOp_grad/case/If_1/Switch_2",
+                "op": "Switch"
+            },
+            "pid": 1,
+            "ts": 1503674449517915,
+            "cat": "Op",
+            "tid": 2,
+            "ph": "X",
+            "dur": 5
+        },
+        {
+            "name": "train/gradients/layer1/taco_expression_calculation/TacoExprOp_grad/case/If_0/Merge_1",
+            "pid": 1,
+            "ts": 1503674449517853,
+            "cat": "DataFlow",
+            "tid": 1,
+            "ph": "s",
+            "id": 110
+        },
+        {
+            "name": "train/gradients/layer1/taco_expression_calculation/TacoExprOp_grad/case/If_0/Merge_1",
+            "pid": 1,
+            "ts": 1503674449517915,
+            "cat": "DataFlow",
+            "tid": 2,
+            "ph": "t",
+            "id": 110
+        },
+        {
+            "name": "train/gradients/layer1/taco_expression_calculation/TacoExprOp_grad/case/If_1/pred_id",
+            "pid": 1,
+            "ts": 1503674449517722,
+            "cat": "DataFlow",
+            "tid": 1,
+            "ph": "s",
+            "id": 111
+        },
+        {
+            "name": "train/gradients/layer1/taco_expression_calculation/TacoExprOp_grad/case/If_1/pred_id",
+            "pid": 1,
+            "ts": 1503674449517915,
+            "cat": "DataFlow",
+            "tid": 2,
+            "ph": "t",
+            "id": 111
+        },
+        {
+            "name": "NoOp",
+            "args": {
+                "input0": "^train/gradients/layer1/bias/add_grad/Reshape",
+                "input1": "^train/gradients/layer1/bias/add_grad/Reshape_1",
+                "name": "train/gradients/layer1/bias/add_grad/tuple/group_deps",
+                "op": "NoOp"
+            },
+            "pid": 1,
+            "ts": 1503674449517929,
+            "cat": "Op",
+            "tid": 0,
+            "ph": "X",
+            "dur": 4
+        },
+        {
+            "name": "Switch",
+            "args": {
+                "input0": "train/gradients/layer1/taco_expression_calculation/TacoExprOp_grad/case/If_0/Merge_2",
+                "input1": "train/gradients/layer1/taco_expression_calculation/TacoExprOp_grad/case/If_1/pred_id",
+                "name": "train/gradients/layer1/taco_expression_calculation/TacoExprOp_grad/case/If_1/Switch_3",
+                "op": "Switch"
+            },
+            "pid": 1,
+            "ts": 1503674449517934,
+            "cat": "Op",
+            "tid": 0,
+            "ph": "X",
+            "dur": 4
+        },
+        {
+            "name": "train/gradients/layer1/taco_expression_calculation/TacoExprOp_grad/case/If_1/pred_id",
+            "pid": 1,
+            "ts": 1503674449517722,
+            "cat": "DataFlow",
+            "tid": 1,
+            "ph": "s",
+            "id": 112
+        },
+        {
+            "name": "train/gradients/layer1/taco_expression_calculation/TacoExprOp_grad/case/If_1/pred_id",
+            "pid": 1,
+            "ts": 1503674449517934,
+            "cat": "DataFlow",
+            "tid": 0,
+            "ph": "t",
+            "id": 112
+        },
+        {
+            "name": "Identity",
+            "args": {
+                "input0": "train/gradients/layer1/bias/add_grad/Reshape",
+                "input1": "^train/gradients/layer1/bias/add_grad/tuple/group_deps",
+                "name": "train/gradients/layer1/bias/add_grad/tuple/control_dependency",
+                "op": "Identity"
+            },
+            "pid": 1,
+            "ts": 1503674449517936,
+            "cat": "Op",
+            "tid": 1,
+            "ph": "X",
+            "dur": 6
+        },
+        {
+            "name": "Switch",
+            "args": {
+                "input0": "train/gradients/layer1/taco_expression_calculation/TacoExprOp_grad/case/If_0/Merge_3",
+                "input1": "train/gradients/layer1/taco_expression_calculation/TacoExprOp_grad/case/If_1/pred_id",
+                "name": "train/gradients/layer1/taco_expression_calculation/TacoExprOp_grad/case/If_1/Switch_4",
+                "op": "Switch"
+            },
+            "pid": 1,
+            "ts": 1503674449517942,
+            "cat": "Op",
+            "tid": 0,
+            "ph": "X",
+            "dur": 4
+        },
+        {
+            "name": "train/gradients/layer1/taco_expression_calculation/TacoExprOp_grad/case/If_1/pred_id",
+            "pid": 1,
+            "ts": 1503674449517722,
+            "cat": "DataFlow",
+            "tid": 1,
+            "ph": "s",
+            "id": 113
+        },
+        {
+            "name": "train/gradients/layer1/taco_expression_calculation/TacoExprOp_grad/case/If_1/pred_id",
+            "pid": 1,
+            "ts": 1503674449517942,
+            "cat": "DataFlow",
+            "tid": 0,
+            "ph": "t",
+            "id": 113
+        },
+        {
+            "name": "Switch",
+            "args": {
+                "input0": "train/gradients/layer1/taco_expression_calculation/TacoExprOp_grad/case/If_0/Merge_4",
+                "input1": "train/gradients/layer1/taco_expression_calculation/TacoExprOp_grad/case/If_1/pred_id",
+                "name": "train/gradients/layer1/taco_expression_calculation/TacoExprOp_grad/case/If_1/Switch_5",
+                "op": "Switch"
+            },
+            "pid": 1,
+            "ts": 1503674449517950,
+            "cat": "Op",
+            "tid": 0,
+            "ph": "X",
+            "dur": 4
+        },
+        {
+            "name": "train/gradients/layer1/taco_expression_calculation/TacoExprOp_grad/case/If_1/pred_id",
+            "pid": 1,
+            "ts": 1503674449517722,
+            "cat": "DataFlow",
+            "tid": 1,
+            "ph": "s",
+            "id": 114
+        },
+        {
+            "name": "train/gradients/layer1/taco_expression_calculation/TacoExprOp_grad/case/If_1/pred_id",
+            "pid": 1,
+            "ts": 1503674449517950,
+            "cat": "DataFlow",
+            "tid": 0,
+            "ph": "t",
+            "id": 114
+        },
+        {
+            "name": "Shape",
+            "args": {
+                "input0": "train/gradients/layer1/bias/add_grad/tuple/control_dependency",
+                "name": "train/gradients/layer1/taco_expression_calculation/TacoExprOp_grad/Shape",
+                "op": "Shape"
+            },
+            "pid": 1,
+            "ts": 1503674449517951,
+            "cat": "Op",
+            "tid": 1,
+            "ph": "X",
+            "dur": 8
+        },
+        {
+            "name": "Switch",
+            "args": {
+                "input0": "train/gradients/layer1/taco_expression_calculation/TacoExprOp_grad/case/If_0/Merge_5",
+                "input1": "train/gradients/layer1/taco_expression_calculation/TacoExprOp_grad/case/If_1/pred_id",
+                "name": "train/gradients/layer1/taco_expression_calculation/TacoExprOp_grad/case/If_1/Switch_6",
+                "op": "Switch"
+            },
+            "pid": 1,
+            "ts": 1503674449517956,
+            "cat": "Op",
+            "tid": 0,
+            "ph": "X",
+            "dur": 4
+        },
+        {
+            "name": "train/gradients/layer1/taco_expression_calculation/TacoExprOp_grad/case/If_0/Merge_5",
+            "pid": 1,
+            "ts": 1503674449517895,
+            "cat": "DataFlow",
+            "tid": 1,
+            "ph": "s",
+            "id": 115
+        },
+        {
+            "name": "train/gradients/layer1/taco_expression_calculation/TacoExprOp_grad/case/If_0/Merge_5",
+            "pid": 1,
+            "ts": 1503674449517956,
+            "cat": "DataFlow",
+            "tid": 0,
+            "ph": "t",
+            "id": 115
+        },
+        {
+            "name": "train/gradients/layer1/taco_expression_calculation/TacoExprOp_grad/case/If_1/pred_id",
+            "pid": 1,
+            "ts": 1503674449517722,
+            "cat": "DataFlow",
+            "tid": 1,
+            "ph": "s",
+            "id": 116
+        },
+        {
+            "name": "train/gradients/layer1/taco_expression_calculation/TacoExprOp_grad/case/If_1/pred_id",
+            "pid": 1,
+            "ts": 1503674449517956,
+            "cat": "DataFlow",
+            "tid": 0,
+            "ph": "t",
+            "id": 116
+        },
+        {
+            "name": "Pack",
+            "args": {
+                "input0": "train/gradients/layer1/bias/add_grad/tuple/control_dependency",
+                "name": "train/gradients/layer1/taco_expression_calculation/TacoExprOp_grad/TacoTensor/values",
+                "op": "Pack"
+            },
+            "pid": 1,
+            "ts": 1503674449517949,
+            "cat": "Op",
+            "tid": 2,
+            "ph": "X",
+            "dur": 12
+        },
+        {
+            "name": "train/gradients/layer1/bias/add_grad/tuple/control_dependency",
+            "pid": 1,
+            "ts": 1503674449517942,
+            "cat": "DataFlow",
+            "tid": 1,
+            "ph": "s",
+            "id": 117
+        },
+        {
+            "name": "train/gradients/layer1/bias/add_grad/tuple/control_dependency",
+            "pid": 1,
+            "ts": 1503674449517949,
+            "cat": "DataFlow",
+            "tid": 2,
+            "ph": "t",
+            "id": 117
+        },
+        {
+            "name": "Switch",
+            "args": {
+                "input0": "train/gradients/layer1/taco_expression_calculation/TacoExprOp_grad/case/If_0/Merge_6",
+                "input1": "train/gradients/layer1/taco_expression_calculation/TacoExprOp_grad/case/If_1/pred_id",
+                "name": "train/gradients/layer1/taco_expression_calculation/TacoExprOp_grad/case/If_1/Switch_7",
+                "op": "Switch"
+            },
+            "pid": 1,
+            "ts": 1503674449517963,
+            "cat": "Op",
+            "tid": 0,
+            "ph": "X",
+            "dur": 6
+        },
+        {
+            "name": "train/gradients/layer1/taco_expression_calculation/TacoExprOp_grad/case/If_1/pred_id",
+            "pid": 1,
+            "ts": 1503674449517722,
+            "cat": "DataFlow",
+            "tid": 1,
+            "ph": "s",
+            "id": 118
+        },
+        {
+            "name": "train/gradients/layer1/taco_expression_calculation/TacoExprOp_grad/case/If_1/pred_id",
+            "pid": 1,
+            "ts": 1503674449517963,
+            "cat": "DataFlow",
+            "tid": 0,
+            "ph": "t",
+            "id": 118
+        },
+        {
+            "name": "Merge",
+            "args": {
+                "input0": "train/gradients/layer1/taco_expression_calculation/TacoExprOp_grad/case/If_1/Switch_1",
+                "input1": "train/gradients/layer1/taco_expression_calculation/TacoExprOp_grad/case/If_1/Const",
+                "name": "train/gradients/layer1/taco_expression_calculation/TacoExprOp_grad/case/If_1/Merge",
+                "op": "Merge"
+            },
+            "pid": 1,
+            "ts": 1503674449517972,
+            "cat": "Op",
+            "tid": 0,
+            "ph": "X",
+            "dur": 6
+        },
+        {
+            "name": "Merge",
+            "args": {
+                "input0": "train/gradients/layer1/taco_expression_calculation/TacoExprOp_grad/case/If_1/Switch_2",
+                "input1": "train/gradients/layer1/taco_expression_calculation/TacoExprOp_grad/case/If_1/Const_1",
+                "name": "train/gradients/layer1/taco_expression_calculation/TacoExprOp_grad/case/If_1/Merge_1",
+                "op": "Merge"
+            },
+            "pid": 1,
+            "ts": 1503674449517981,
+            "cat": "Op",
+            "tid": 0,
+            "ph": "X",
+            "dur": 7
+        },
+        {
+            "name": "train/gradients/layer1/taco_expression_calculation/TacoExprOp_grad/case/If_1/Switch_2",
+            "pid": 1,
+            "ts": 1503674449517920,
+            "cat": "DataFlow",
+            "tid": 2,
+            "ph": "s",
+            "id": 119
+        },
+        {
+            "name": "train/gradients/layer1/taco_expression_calculation/TacoExprOp_grad/case/If_1/Switch_2",
+            "pid": 1,
+            "ts": 1503674449517981,
+            "cat": "DataFlow",
+            "tid": 0,
+            "ph": "t",
+            "id": 119
+        },
+        {
+            "name": "Merge",
+            "args": {
+                "input0": "train/gradients/layer1/taco_expression_calculation/TacoExprOp_grad/case/If_1/Switch_3",
+                "input1": "train/gradients/layer1/taco_expression_calculation/TacoExprOp_grad/case/If_1/Const_2",
+                "name": "train/gradients/layer1/taco_expression_calculation/TacoExprOp_grad/case/If_1/Merge_2",
+                "op": "Merge"
+            },
+            "pid": 1,
+            "ts": 1503674449517992,
+            "cat": "Op",
+            "tid": 0,
+            "ph": "X",
+            "dur": 5
+        },
+        {
+            "name": "Merge",
+            "args": {
+                "input0": "train/gradients/layer1/taco_expression_calculation/TacoExprOp_grad/case/If_1/Switch_4",
+                "input1": "train/gradients/layer1/taco_expression_calculation/TacoExprOp_grad/case/If_1/Const_3",
+                "name": "train/gradients/layer1/taco_expression_calculation/TacoExprOp_grad/case/If_1/Merge_3",
+                "op": "Merge"
+            },
+            "pid": 1,
+            "ts": 1503674449518000,
+            "cat": "Op",
+            "tid": 0,
+            "ph": "X",
+            "dur": 6
+        },
+        {
+            "name": "Merge",
+            "args": {
+                "input0": "train/gradients/layer1/taco_expression_calculation/TacoExprOp_grad/case/If_1/Switch_5",
+                "input1": "train/gradients/layer1/taco_expression_calculation/TacoExprOp_grad/case/If_1/Const_4",
+                "name": "train/gradients/layer1/taco_expression_calculation/TacoExprOp_grad/case/If_1/Merge_4",
+                "op": "Merge"
+            },
+            "pid": 1,
+            "ts": 1503674449518009,
+            "cat": "Op",
+            "tid": 0,
+            "ph": "X",
+            "dur": 6
+        },
+        {
+            "name": "Merge",
+            "args": {
+                "input0": "train/gradients/layer1/taco_expression_calculation/TacoExprOp_grad/case/If_1/Switch_6",
+                "input1": "train/gradients/layer1/taco_expression_calculation/TacoExprOp_grad/case/If_1/Const_5",
+                "name": "train/gradients/layer1/taco_expression_calculation/TacoExprOp_grad/case/If_1/Merge_5",
+                "op": "Merge"
+            },
+            "pid": 1,
+            "ts": 1503674449518018,
+            "cat": "Op",
+            "tid": 0,
+            "ph": "X",
+            "dur": 5
+        },
+        {
+            "name": "Merge",
+            "args": {
+                "input0": "train/gradients/layer1/taco_expression_calculation/TacoExprOp_grad/case/If_1/Switch_7",
+                "input1": "train/gradients/layer1/taco_expression_calculation/TacoExprOp_grad/case/If_1/Const_6",
+                "name": "train/gradients/layer1/taco_expression_calculation/TacoExprOp_grad/case/If_1/Merge_6",
+                "op": "Merge"
+            },
+            "pid": 1,
+            "ts": 1503674449518027,
+            "cat": "Op",
+            "tid": 0,
+            "ph": "X",
+            "dur": 6
+        },
+        {
+            "name": "Switch",
+            "args": {
+                "input0": "train/gradients/layer1/taco_expression_calculation/TacoExprOp_grad/case/If_1/Merge",
+                "input1": "train/gradients/layer1/taco_expression_calculation/TacoExprOp_grad/case/If_2/pred_id",
+                "name": "train/gradients/layer1/taco_expression_calculation/TacoExprOp_grad/case/If_2/Switch_1",
+                "op": "Switch"
+            },
+            "pid": 1,
+            "ts": 1503674449518035,
+            "cat": "Op",
+            "tid": 0,
+            "ph": "X",
+            "dur": 4
+        },
+        {
+            "name": "Switch",
+            "args": {
+                "input0": "train/gradients/layer1/taco_expression_calculation/TacoExprOp_grad/case/If_1/Merge_1",
+                "input1": "train/gradients/layer1/taco_expression_calculation/TacoExprOp_grad/case/If_2/pred_id",
+                "name": "train/gradients/layer1/taco_expression_calculation/TacoExprOp_grad/case/If_2/Switch_2",
+                "op": "Switch"
+            },
+            "pid": 1,
+            "ts": 1503674449518042,
+            "cat": "Op",
+            "tid": 0,
+            "ph": "X",
+            "dur": 3
+        },
+        {
+            "name": "Switch",
+            "args": {
+                "input0": "train/gradients/layer1/taco_expression_calculation/TacoExprOp_grad/case/If_1/Merge_2",
+                "input1": "train/gradients/layer1/taco_expression_calculation/TacoExprOp_grad/case/If_2/pred_id",
+                "name": "train/gradients/layer1/taco_expression_calculation/TacoExprOp_grad/case/If_2/Switch_3",
+                "op": "Switch"
+            },
+            "pid": 1,
+            "ts": 1503674449518048,
+            "cat": "Op",
+            "tid": 0,
+            "ph": "X",
+            "dur": 4
+        },
+        {
+            "name": "Switch",
+            "args": {
+                "input0": "train/gradients/layer1/taco_expression_calculation/TacoExprOp_grad/case/If_1/Merge_3",
+                "input1": "train/gradients/layer1/taco_expression_calculation/TacoExprOp_grad/case/If_2/pred_id",
+                "name": "train/gradients/layer1/taco_expression_calculation/TacoExprOp_grad/case/If_2/Switch_4",
+                "op": "Switch"
+            },
+            "pid": 1,
+            "ts": 1503674449518054,
+            "cat": "Op",
+            "tid": 0,
+            "ph": "X",
+            "dur": 5
+        },
+        {
+            "name": "TacoTensor",
+            "args": {
+                "input2": "train/gradients/layer1/taco_expression_calculation/TacoExprOp_grad/TacoTensor/values",
+                "input3": "train/gradients/layer1/taco_expression_calculation/TacoExprOp_grad/TacoTensor/indices",
+                "input0": "train/gradients/layer1/taco_expression_calculation/TacoExprOp_grad/Shape",
+                "input1": "train/gradients/layer1/taco_expression_calculation/TacoExprOp_grad/TacoTensor/format",
+                "name": "train/gradients/layer1/taco_expression_calculation/TacoExprOp_grad/TacoTensor",
+                "op": "TacoTensor"
+            },
+            "pid": 1,
+            "ts": 1503674449517965,
+            "cat": "Op",
+            "tid": 1,
+            "ph": "X",
+            "dur": 91
+        },
+        {
+            "name": "train/gradients/layer1/taco_expression_calculation/TacoExprOp_grad/TacoTensor/format",
+            "pid": 1,
+            "ts": 1503674449516170,
+            "cat": "DataFlow",
+            "tid": 0,
+            "ph": "s",
+            "id": 120
+        },
+        {
+            "name": "train/gradients/layer1/taco_expression_calculation/TacoExprOp_grad/TacoTensor/format",
+            "pid": 1,
+            "ts": 1503674449517965,
+            "cat": "DataFlow",
+            "tid": 1,
+            "ph": "t",
+            "id": 120
+        },
+        {
+            "name": "train/gradients/layer1/taco_expression_calculation/TacoExprOp_grad/TacoTensor/values",
+            "pid": 1,
+            "ts": 1503674449517961,
+            "cat": "DataFlow",
+            "tid": 2,
+            "ph": "s",
+            "id": 121
+        },
+        {
+            "name": "train/gradients/layer1/taco_expression_calculation/TacoExprOp_grad/TacoTensor/values",
+            "pid": 1,
+            "ts": 1503674449517965,
+            "cat": "DataFlow",
+            "tid": 1,
+            "ph": "t",
+            "id": 121
+        },
+        {
+            "name": "Switch",
+            "args": {
+                "input0": "train/gradients/layer1/taco_expression_calculation/TacoExprOp_grad/case/If_1/Merge_4",
+                "input1": "train/gradients/layer1/taco_expression_calculation/TacoExprOp_grad/case/If_2/pred_id",
+                "name": "train/gradients/layer1/taco_expression_calculation/TacoExprOp_grad/case/If_2/Switch_5",
+                "op": "Switch"
+            },
+            "pid": 1,
+            "ts": 1503674449518061,
+            "cat": "Op",
+            "tid": 0,
+            "ph": "X",
+            "dur": 4
+        },
+        {
+            "name": "Switch",
+            "args": {
+                "input0": "train/gradients/layer1/taco_expression_calculation/TacoExprOp_grad/TacoTensor",
+                "input1": "train/gradients/layer1/taco_expression_calculation/TacoExprOp_grad/case/If_2/pred_id",
+                "name": "train/gradients/layer1/taco_expression_calculation/TacoExprOp_grad/case/If_2/TacoExprOp/Switch_2",
+                "op": "Switch"
+            },
+            "pid": 1,
+            "ts": 1503674449518064,
+            "cat": "Op",
+            "tid": 1,
+            "ph": "X",
+            "dur": 6
+        },
+        {
+            "name": "train/gradients/layer1/taco_expression_calculation/TacoExprOp_grad/case/If_2/pred_id",
+            "pid": 1,
+            "ts": 1503674449517688,
+            "cat": "DataFlow",
+            "tid": 0,
+            "ph": "s",
+            "id": 122
+        },
+        {
+            "name": "train/gradients/layer1/taco_expression_calculation/TacoExprOp_grad/case/If_2/pred_id",
+            "pid": 1,
+            "ts": 1503674449518064,
+            "cat": "DataFlow",
+            "tid": 1,
+            "ph": "t",
+            "id": 122
+        },
+        {
+            "name": "Switch",
+            "args": {
+                "input0": "train/gradients/layer1/taco_expression_calculation/TacoExprOp_grad/case/If_1/Merge_5",
+                "input1": "train/gradients/layer1/taco_expression_calculation/TacoExprOp_grad/case/If_2/pred_id",
+                "name": "train/gradients/layer1/taco_expression_calculation/TacoExprOp_grad/case/If_2/Switch_6",
+                "op": "Switch"
+            },
+            "pid": 1,
+            "ts": 1503674449518068,
+            "cat": "Op",
+            "tid": 0,
+            "ph": "X",
+            "dur": 4
+        },
+        {
+            "name": "Switch",
+            "args": {
+                "input0": "train/gradients/layer1/taco_expression_calculation/TacoExprOp_grad/TacoTensor:1",
+                "input1": "train/gradients/layer1/taco_expression_calculation/TacoExprOp_grad/case/If_2/pred_id",
+                "name": "train/gradients/layer1/taco_expression_calculation/TacoExprOp_grad/case/If_2/TacoExprOp/Switch_4",
+                "op": "Switch"
+            },
+            "pid": 1,
+            "ts": 1503674449518074,
+            "cat": "Op",
+            "tid": 0,
+            "ph": "X",
+            "dur": 5
+        },
+        {
+            "name": "train/gradients/layer1/taco_expression_calculation/TacoExprOp_grad/TacoTensor:1",
+            "pid": 1,
+            "ts": 1503674449518056,
+            "cat": "DataFlow",
+            "tid": 1,
+            "ph": "s",
+            "id": 123
+        },
+        {
+            "name": "train/gradients/layer1/taco_expression_calculation/TacoExprOp_grad/TacoTensor:1",
+            "pid": 1,
+            "ts": 1503674449518074,
+            "cat": "DataFlow",
+            "tid": 0,
+            "ph": "t",
+            "id": 123
+        },
+        {
+            "name": "Switch",
+            "args": {
+                "input0": "train/gradients/layer1/taco_expression_calculation/TacoExprOp_grad/case/If_1/Merge_6",
+                "input1": "train/gradients/layer1/taco_expression_calculation/TacoExprOp_grad/case/If_2/pred_id",
+                "name": "train/gradients/layer1/taco_expression_calculation/TacoExprOp_grad/case/If_2/Switch_7",
+                "op": "Switch"
+            },
+            "pid": 1,
+            "ts": 1503674449518076,
+            "cat": "Op",
+            "tid": 1,
+            "ph": "X",
+            "dur": 5
+        },
+        {
+            "name": "train/gradients/layer1/taco_expression_calculation/TacoExprOp_grad/case/If_1/Merge_6",
+            "pid": 1,
+            "ts": 1503674449518033,
+            "cat": "DataFlow",
+            "tid": 0,
+            "ph": "s",
+            "id": 124
+        },
+        {
+            "name": "train/gradients/layer1/taco_expression_calculation/TacoExprOp_grad/case/If_1/Merge_6",
+            "pid": 1,
+            "ts": 1503674449518076,
+            "cat": "DataFlow",
+            "tid": 1,
+            "ph": "t",
+            "id": 124
+        },
+        {
+            "name": "train/gradients/layer1/taco_expression_calculation/TacoExprOp_grad/case/If_2/pred_id",
+            "pid": 1,
+            "ts": 1503674449517688,
+            "cat": "DataFlow",
+            "tid": 0,
+            "ph": "s",
+            "id": 125
+        },
+        {
+            "name": "train/gradients/layer1/taco_expression_calculation/TacoExprOp_grad/case/If_2/pred_id",
+            "pid": 1,
+            "ts": 1503674449518076,
+            "cat": "DataFlow",
+            "tid": 1,
+            "ph": "t",
+            "id": 125
+        },
+        {
+            "name": "TacoExprOp",
+            "args": {
+                "input2": "train/gradients/layer1/taco_expression_calculation/TacoExprOp_grad/case/If_2/TacoExprOp/Switch_2:1",
+                "input3": "train/gradients/layer1/taco_expression_calculation/TacoExprOp_grad/case/If_2/TacoExprOp/Switch_3:1",
+                "input0": "train/gradients/layer1/taco_expression_calculation/TacoExprOp_grad/case/If_2/TacoExprOp/Switch:1",
+                "input1": "train/gradients/layer1/taco_expression_calculation/TacoExprOp_grad/case/If_2/TacoExprOp/Switch_1:1",
+                "name": "train/gradients/layer1/taco_expression_calculation/TacoExprOp_grad/case/If_2/TacoExprOp",
+                "input4": "train/gradients/layer1/taco_expression_calculation/TacoExprOp_grad/case/If_2/TacoExprOp/Switch_4:1",
+                "op": "TacoExprOp"
+            },
+            "pid": 1,
+            "ts": 1503674449518083,
+            "cat": "Op",
+            "tid": 0,
+            "ph": "X",
+            "dur": 506
+        },
+        {
+            "name": "Merge",
+            "args": {
+                "input0": "train/gradients/layer1/taco_expression_calculation/TacoExprOp_grad/case/If_2/Switch_3",
+                "input1": "train/gradients/layer1/taco_expression_calculation/TacoExprOp_grad/case/If_2/TacoExprOp",
+                "name": "train/gradients/layer1/taco_expression_calculation/TacoExprOp_grad/case/If_2/Merge_2",
+                "op": "Merge"
+            },
+            "pid": 1,
+            "ts": 1503674449518597,
+            "cat": "Op",
+            "tid": 0,
+            "ph": "X",
+            "dur": 9
+        },
+        {
+            "name": "NoOp",
+            "args": {
+                "input2": "^train/gradients/layer1/taco_expression_calculation/TacoExprOp_grad/case/If_2/Merge_2",
+                "input3": "^train/gradients/layer1/taco_expression_calculation/TacoExprOp_grad/case/If_2/Merge_3",
+                "input0": "^train/gradients/layer1/taco_expression_calculation/TacoExprOp_grad/case/If_2/Merge",
+                "input1": "^train/gradients/layer1/taco_expression_calculation/TacoExprOp_grad/case/If_2/Merge_1",
+                "input6": "^train/gradients/layer1/taco_expression_calculation/TacoExprOp_grad/case/If_2/Merge_6",
+                "name": "train/gradients/layer1/taco_expression_calculation/TacoExprOp_grad/tuple/group_deps",
+                "input4": "^train/gradients/layer1/taco_expression_calculation/TacoExprOp_grad/case/If_2/Merge_4",
+                "input5": "^train/gradients/layer1/taco_expression_calculation/TacoExprOp_grad/case/If_2/Merge_5",
+                "op": "NoOp"
+            },
+            "pid": 1,
+            "ts": 1503674449518610,
+            "cat": "Op",
+            "tid": 0,
+            "ph": "X",
+            "dur": 3
+        },
+        {
+            "name": "Identity",
+            "args": {
+                "input0": "train/gradients/layer1/taco_expression_calculation/TacoExprOp_grad/case/If_2/Merge_2",
+                "input1": "^train/gradients/layer1/taco_expression_calculation/TacoExprOp_grad/tuple/group_deps",
+                "name": "train/gradients/layer1/taco_expression_calculation/TacoExprOp_grad/tuple/control_dependency_2",
+                "op": "Identity"
+            },
+            "pid": 1,
+            "ts": 1503674449518617,
+            "cat": "Op",
+            "tid": 0,
+            "ph": "X",
+            "dur": 4
+        },
+        {
+            "name": "ApplyAdam",
+            "args": {
+                "input2": "W/Adam_1",
+                "input3": "train/Adam/update_W/Cast",
+                "input0": "W",
+                "input1": "W/Adam",
+                "input6": "train/Adam/update_W/Cast_3",
+                "name": "train/Adam/update_W/ApplyAdam",
+                "input4": "train/Adam/update_W/Cast_1",
+                "input5": "train/Adam/update_W/Cast_2",
+                "input7": "train/Adam/update_W/Cast_4",
+                "input8": "train/Adam/update_W/Cast_5",
+                "input9": "train/gradients/layer1/taco_expression_calculation/TacoExprOp_grad/tuple/control_dependency_2",
+                "op": "ApplyAdam"
+            },
+            "pid": 1,
+            "ts": 1503674449518625,
+            "cat": "Op",
+            "tid": 0,
+            "ph": "X",
+            "dur": 117
+        },
+        {
+            "name": "W",
+            "pid": 1,
+            "ts": 1503674449515990,
+            "cat": "DataFlow",
+            "tid": 3,
+            "ph": "s",
+            "id": 126
+        },
+        {
+            "name": "W",
+            "pid": 1,
+            "ts": 1503674449518625,
+            "cat": "DataFlow",
+            "tid": 0,
+            "ph": "t",
+            "id": 126
+        },
+        {
+            "name": "W/Adam",
+            "pid": 1,
+            "ts": 1503674449515986,
+            "cat": "DataFlow",
+            "tid": 1,
+            "ph": "s",
+            "id": 127
+        },
+        {
+            "name": "W/Adam",
+            "pid": 1,
+            "ts": 1503674449518625,
+            "cat": "DataFlow",
+            "tid": 0,
+            "ph": "t",
+            "id": 127
+        },
+        {
+            "name": "W/Adam_1",
+            "pid": 1,
+            "ts": 1503674449516012,
+            "cat": "DataFlow",
+            "tid": 6,
+            "ph": "s",
+            "id": 128
+        },
+        {
+            "name": "W/Adam_1",
+            "pid": 1,
+            "ts": 1503674449518625,
+            "cat": "DataFlow",
+            "tid": 0,
+            "ph": "t",
+            "id": 128
+        },
+        {
+            "name": "train/Adam/update_W/Cast",
+            "pid": 1,
+            "ts": 1503674449516044,
+            "cat": "DataFlow",
+            "tid": 1,
+            "ph": "s",
+            "id": 129
+        },
+        {
+            "name": "train/Adam/update_W/Cast",
+            "pid": 1,
+            "ts": 1503674449518625,
+            "cat": "DataFlow",
+            "tid": 0,
+            "ph": "t",
+            "id": 129
+        },
+        {
+            "name": "train/Adam/update_W/Cast_1",
+            "pid": 1,
+            "ts": 1503674449516038,
+            "cat": "DataFlow",
+            "tid": 2,
+            "ph": "s",
+            "id": 130
+        },
+        {
+            "name": "train/Adam/update_W/Cast_1",
+            "pid": 1,
+            "ts": 1503674449518625,
+            "cat": "DataFlow",
+            "tid": 0,
+            "ph": "t",
+            "id": 130
+        },
+        {
+            "name": "Mul",
+            "args": {
+                "input2": "^train/Adam/update_W/ApplyAdam",
+                "input0": "train/beta2_power/read",
+                "input1": "train/Adam/beta2",
+                "name": "train/Adam/mul_1",
+                "op": "Mul"
+            },
+            "pid": 1,
+            "ts": 1503674449518759,
+            "cat": "Op",
+            "tid": 0,
+            "ph": "X",
+            "dur": 13
+        },
+        {
+            "name": "train/beta2_power/read",
+            "pid": 1,
+            "ts": 1503674449516022,
+            "cat": "DataFlow",
+            "tid": 2,
+            "ph": "s",
+            "id": 131
+        },
+        {
+            "name": "train/beta2_power/read",
+            "pid": 1,
+            "ts": 1503674449518759,
+            "cat": "DataFlow",
+            "tid": 0,
+            "ph": "t",
+            "id": 131
+        },
+        {
+            "name": "Assign",
+            "args": {
+                "input0": "train/beta2_power",
+                "input1": "train/Adam/mul_1",
+                "name": "train/Adam/Assign_1",
+                "op": "Assign"
+            },
+            "pid": 1,
+            "ts": 1503674449518775,
+            "cat": "Op",
+            "tid": 0,
+            "ph": "X",
+            "dur": 9
+        },
+        {
+            "name": "train/beta2_power",
+            "pid": 1,
+            "ts": 1503674449516007,
+            "cat": "DataFlow",
+            "tid": 5,
+            "ph": "s",
+            "id": 132
+        },
+        {
+            "name": "train/beta2_power",
+            "pid": 1,
+            "ts": 1503674449518775,
+            "cat": "DataFlow",
+            "tid": 0,
+            "ph": "t",
+            "id": 132
+        },
+        {
+            "name": "Mul",
+            "args": {
+                "input2": "^train/Adam/update_W/ApplyAdam",
+                "input0": "train/beta1_power/read",
+                "input1": "train/Adam/beta1",
+                "name": "train/Adam/mul",
+                "op": "Mul"
+            },
+            "pid": 1,
+            "ts": 1503674449518788,
+            "cat": "Op",
+            "tid": 0,
+            "ph": "X",
+            "dur": 6
+        },
+        {
+            "name": "Assign",
+            "args": {
+                "input0": "train/beta1_power",
+                "input1": "train/Adam/mul",
+                "name": "train/Adam/Assign",
+                "op": "Assign"
+            },
+            "pid": 1,
+            "ts": 1503674449518797,
+            "cat": "Op",
+            "tid": 0,
+            "ph": "X",
+            "dur": 5
+        },
+        {
+            "name": "train/beta1_power",
+            "pid": 1,
+            "ts": 1503674449516003,
+            "cat": "DataFlow",
+            "tid": 4,
+            "ph": "s",
+            "id": 133
+        },
+        {
+            "name": "train/beta1_power",
+            "pid": 1,
+            "ts": 1503674449518797,
+            "cat": "DataFlow",
+            "tid": 0,
+            "ph": "t",
+            "id": 133
+        },
+        {
+            "name": "NoOp",
+            "args": {
+                "input2": "^train/Adam/Assign_1",
+                "input0": "^train/Adam/update_W/ApplyAdam",
+                "input1": "^train/Adam/Assign",
+                "name": "train/Adam",
+                "op": "NoOp"
+            },
+            "pid": 1,
+            "ts": 1503674449518805,
+            "cat": "Op",
+            "tid": 0,
+            "ph": "X",
+            "dur": 7
+        }
+    ]
+}

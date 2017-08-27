@@ -6,15 +6,15 @@
 #include "tensorflow/core/framework/op_kernel.h"
 #include "taco/tensor.h"
 #include "taco/format.h"
-
+#include "taco/util/timers.h"
 using namespace tensorflow;
 
 REGISTER_OP("TacoTensor")
     .Input("dimensions: int32")
     .Input("format: string")
     .Input("values: double")
-    .Input("indices: N*int32")
-    .Attr("N: int")
+    .Input("indices: int32")
+    //.Attr("N: int")
     .Output("taco_tensor: double")
     .Output("taco_index: string")
     ;
@@ -27,14 +27,18 @@ class TacoTensorOp : public OpKernel {
   }
 
   void Compute(OpKernelContext* context) override {
-   //gathering tensor values
+    //taco::util::Timer tensorTimer;
+    //tensorTimer.start();
+    //taco::util::Timer insertTimer;
+    //insertTimer.start();
+    //gathering tensor values
     const Tensor& format_string_tensor = context->input(1);
     auto format_string_input = format_string_tensor.flat<string>();
     bool alldense=true;
 
     //creating TACO format
     int FS = format_string_input.size();
-
+    									//dude check that this is or just get order 
     const Tensor& dim_tensor = context->input(0);
     auto dim_flat = dim_tensor.flat<int32>();
     int32* dim_ptr=(int32*)dim_flat.data();
@@ -53,8 +57,10 @@ class TacoTensorOp : public OpKernel {
 
     //creating TACO tensor with proper dimensions and typing
     taco::Tensor<double> tensor("default", dim_input, user_format);
-    OpInputList indices_tensor;
-    OP_REQUIRES_OK(context, context->input_list("indices", &indices_tensor));
+    //OpInputList indices_tensor;
+    const Tensor& indices_tensor = context->input(3);
+    const int64 indices_num = indices_tensor.shape().dim_size(0);
+    //OP_REQUIRES_OK(context, context->input_list("indices", &indices_tensor));
     const Tensor& values_tensor = context->input(2);
     auto values = values_tensor.flat<double>();
 
@@ -66,30 +72,42 @@ class TacoTensorOp : public OpKernel {
         tensor.insert(index, values(i));
         i++;
         index[FS-1]++;
-        bool diff=false;
+        //bool diff=false;
+        //std::cout<<values(i)<<",";
         for (int j=(FS-1);j>0; j--) {
           if (index[j]==dim_input[j]) {
             index[j-1]++;
             index[j]=0;
-          } else {diff=true;}
+          } //else {diff=true;}
         }
-        if ((diff==false)&&(index[0]==dim_input[0])) {
+        if ((index[0]==dim_input[0])) {
           same=true;
-        }
+        } 
       }
     } else {
-      for(auto& index_tensor:indices_tensor){
-        int32* idx=(int32*)index_tensor.flat<int32>().data();
-        std::vector<int32> indices (idx, idx+FS);
+      int32* idx=(int32*)indices_tensor.flat<int32>().data(); 
+      for(int j=0;j<(indices_num*FS);j+=FS){
+        std::vector<int32> indices (idx+j, idx+j+FS);
         tensor.insert(indices, values(i));
         i++;
       }
     }
+
+    //insertTimer.stop();
+    //std::cout<<"insertTimer:"<<insertTimer.getResult()<<std::endl;
+    //std::cout<<std::endl;
+
+
+    //taco::util::Timer packTimer;
+    //packTimer.start();
     tensor.pack();
-    							//Technically this makes a duplicate of all the data so I can delete all previous tensors but idk how
-    
+    //std::cout<<tensor<<std::endl;
+    //packTimer.stop();					//Technically this makes a duplicate of all the data so I can delete all previous tensors but idk how
+    //std::cout<<"packTimer:"<<packTimer.getResult()<<std::endl;
     //creating output matrix in proper data format
-						    	//This makes a second copy of the data that I should also be able to delete...
+
+    //taco::util::Timer writeTimer;
+    //writeTimer.start();						    	//This makes a second copy of the data that I should also be able to delete...
     const std::initializer_list<int64> N = {(long long int) tensor.getStorage().getValues().getSize()}; //this will be changed too later
     Tensor* taco_tensor = NULL;
     Tensor* taco_index_tensor = NULL;
@@ -120,7 +138,12 @@ class TacoTensorOp : public OpKernel {
     taco_index(0) = dim_text;
     int k=1;
     for (int i=0;i<FS;i++) {taco_index(k)=format_string_input(i);k++;}
+    //std::cout<<"stream.str:"<<stream.str()<<std::endl;
     taco_index(k) = stream.str();
+    //writeTimer.stop();
+    //std::cout<<"writeTimer:"<<writeTimer.getResult()<<std::endl;
+    //tensorTimer.stop();
+    //std::cout<<"tensorTimer:"<<tensorTimer.getResult()<<std::endl;
   }
 };
 

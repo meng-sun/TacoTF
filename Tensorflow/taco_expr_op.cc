@@ -4,6 +4,8 @@
 #include "taco/tensor.h"
 #include "taco/parser/parser.h"
 #include "taco/format.h"
+#include "taco/util/timers.h"
+#include "taco/ir/ir.h"
 
 using namespace tensorflow;
 
@@ -33,6 +35,9 @@ class TacoExprOp : public OpKernel {
       converts Tensorflow tensors containing taco index and value metadata
       into a taco tensor as a pointer
     */
+    //taco::util::Timer convertTimer;
+    //convertTimer.start();
+
 
     auto ind_flat = ind_tensor.flat<string>();
 
@@ -48,7 +53,7 @@ class TacoExprOp : public OpKernel {
         format_input[i-1] = taco::Dense;
       } else if (ind_flat(i)=="sparse") {
         format_input[i-1] = taco::Sparse;
-      } else {std::cout<<"Invalid ModeType"<<std::endl;}
+      } //else {std::cout<<"Invalid ModeType"<<std::endl;}
     }
     taco::Format format(format_input);
  
@@ -94,6 +99,9 @@ class TacoExprOp : public OpKernel {
     taco::Tensor<double> *taco_ptr = new taco::Tensor<double>(dim_vec, format);
     taco_ptr->getStorage().setValues(values);
     taco_ptr->getStorage().setIndex(index);
+
+    //convertTimer.stop();
+    //std::cout<<"convertTimer:"<<convertTimer.getResult()<<std::endl;
     return taco_ptr;
   }
 
@@ -102,7 +110,8 @@ class TacoExprOp : public OpKernel {
       converts taco Tensor indices into string metadata that is then 
       placed into a Tensorflow string tensor
     */
-
+    //taco::util::Timer gISTimer;
+    //gISTimer.start(); 
     std::ostringstream stream;
     auto index = index_tensor->flat<string>();
     for (size_t i =0; i<result.getOrder(); i++) {
@@ -138,7 +147,8 @@ class TacoExprOp : public OpKernel {
       j++;
     }
     index(j) = stream.str();
-
+    //gISTimer.stop();
+    //std::cout<<"\tgIS Timer:"<<gISTimer.getResult()<<std::endl;
   }
 
   void Compute(OpKernelContext* context) override {
@@ -147,7 +157,8 @@ class TacoExprOp : public OpKernel {
       gradient 
     */
 
-
+    //taco::util::Timer wholeTimer;
+    //wholeTimer.start();
     //Gather input data
     const Tensor& expr_tensor = context->input(0);
     auto expr_flat = expr_tensor.flat<string>();
@@ -161,8 +172,9 @@ class TacoExprOp : public OpKernel {
 
 
 
-
-
+    //std::cout<<"starting parseTimer"<<std::endl;
+    //taco::util::Timer parseTimer;
+    //parseTimer.start();
     //Replace variables in expression with correct TACO default names
     string temp = expr_flat(0);
     size_t begin = temp.find("=")+1;
@@ -231,7 +243,7 @@ class TacoExprOp : public OpKernel {
 
 
 
-
+    //std::cout<<"starting gradient parser"<<std::endl;
     string grad_expr;
     string new_expr_paren;
     int unique_count=0;
@@ -334,7 +346,7 @@ class TacoExprOp : public OpKernel {
 
 
 
-
+    //std::cout<<"starting variable replacement"<<std::endl;
     string replacement_var; 
 
     //Replace indexVars and remove the Tensor indexed by which_grad from the gradient expression
@@ -395,7 +407,8 @@ class TacoExprOp : public OpKernel {
     int transpose_point = -1;
     string return_expr = "\0";
     int ordering = -1;
-
+    string replacement_vars;
+    //std::cout<<"creating return expression"<<std::endl;
 
     //Calculates return expression to calculate the differential
     if((which_grad>-1) &&(grad_expr.length()!=0)) {
@@ -406,8 +419,6 @@ class TacoExprOp : public OpKernel {
       return_expr += '=';
       start = matrix_var.find("(")+1;
       matrix_var = matrix_var.substr(start, matrix_var.find(")")-start);
-      std::vector<std::pair<char,int>> replacement_vars_list;
-      string replacement_vars;
       string transposed_vars;
       string new_result_var;
       string new_matrix_var;
@@ -430,10 +441,18 @@ class TacoExprOp : public OpKernel {
       for(size_t i=0;i<matrix_var.length();i++) {if((matrix_var[i]!=',')&&(!matrix_var_list[i])){matrix_var_count++;new_matrix_var+=matrix_var[i];}}
 
       if (result_var[0]==matrix_var[0]) {
-        replacement_vars = new_matrix_var + new_result_var;
-        ordering = 2;
-        transposed_vars = new_result_var + new_matrix_var;
-        transpose_point = result_var_count;
+        if (result_var==matrix_var){
+          ordering = 2;
+          start = new_expr.find("(")+1;
+          replacement_vars = new_expr.substr(start, new_expr.find(")")-start);
+          transposed_vars = replacement_vars;
+          transpose_point = 0;
+        }else {
+          replacement_vars = new_matrix_var + new_result_var;
+          ordering = 2;
+          transposed_vars = new_result_var + new_matrix_var;
+          transpose_point = result_var_count;
+        }
       }else {
         replacement_vars = new_result_var + new_matrix_var;
         ordering = 1;
@@ -454,6 +473,12 @@ class TacoExprOp : public OpKernel {
       ones_matrix=true;
     }
 
+    //parseTimer.stop();
+    //std::cout<<"parseTimer:"<<parseTimer.getResult()<<std::endl;
+    //taco::util::Timer tacoTimer;
+    //tacoTimer.start();
+    //taco::util::Timer prepareParseTimer;
+    //prepareParseTimer.start();
 
     //calculates result using TACO
     std::map<string, taco::Format> formats;
@@ -462,22 +487,56 @@ class TacoExprOp : public OpKernel {
     string name_it;
     for(auto&tensor_it:tensor_list){
       name_it=tensor_it->getName(); 
-      formats[name_it]=tensor_it->getFormat(); 
+      formats[name_it]=tensor_it->getFormat();
       tensor_sizes[name_it]=tensor_it->getDimensions();
       loaded_tensors[name_it]=*tensor_it;
-      //remove the pointer now
     }
-    
+    //prepareParseTimer.stop();
+    //std::cout<<"\tprepareParseTimer:"<<prepareParseTimer.getResult()<<std::endl;
+    									//What happens when we have (i(k)*j(k))-b(k) I get incompatible dimensions??? 
+    //taco::util::Timer parseResultTimer;
+    //parseResultTimer.start();
     taco::parser::Parser pars(new_expr_space, formats, tensor_sizes, loaded_tensors, 42);
     pars.parse();
     taco::Tensor<double> result = pars.getResultTensor();
+    //parseResultTimer.stop();
+    //std::cout<<"\t\tparseResultTimer:"<<parseResultTimer.getResult()<<std::endl;
+
     //error message if failures from line 441 of https://github.com/tensor-compiler/taco/blob/8123c991673ec5e8916b52bc9fd94ede1853b081/tools/taco.cpp
-    result.compile();
+    //std::cout<<"going to get result of "<<new_expr_space<<std::endl;
+
+    //taco::util::Timer compileTimer;
+    //compileTimer.start();
+    //mutex
+    if (funcs.empty()) {
+      statements = result.get_lowers();
+      funcs = result.functionize(statements);
+      //if(compute_func == nullptr) {std::cout<<"still empty why"<<std::endl;} else {std::cout<<"not empty"<<std::endl;}
+      result.apply_funcs(funcs, &statements[0], &statements[1]);
+    } else {
+      //std::cout<<"parallelism THO"<<std::endl;
+      result.apply_funcs(funcs, &statements[0], &statements[1]);
+      //std::cout<<compute_func_string<<std::endl;
+    }
+    //result.compile();
+    //Tensor tensor = context->mutable_input(0, true);
+    
+    //compileTimer.stop();
+    //std::cout<<"\tcompileTimer:"<<compileTimer.getResult()<<std::endl;
+    //taco::util::Timer assembleTimer;
+    //assembleTimer.start();
     result.assemble();
+    //assembleTimer.stop();
+    //std::cout<<"\tassembleTimer:"<<assembleTimer.getResult()<<std::endl;
+    //taco::util::Timer computeTimer;
+    //computeTimer.start();
     result.compute();
-
-
+    //computeTimer.stop();
+    //std::cout<<"\tcomputeTimer:"<<computeTimer.getResult()<<std::endl;
+    //std::cout<<"which is\n"<<result<<std::endl;
     //Preparing Tensorflow ouputs
+    //taco::util::Timer outputTimer;
+    //outputTimer.start();
     OpOutputList idx_outputs;
     OpOutputList val_outputs;
     Tensor * taco_exp = nullptr;
@@ -496,24 +555,53 @@ class TacoExprOp : public OpKernel {
     Tensor* taco_index_tensor = nullptr;
     Tensor* grad_tensor = nullptr;
     Tensor* grad_index_tensor = nullptr;
-
+    //outputTimer.stop();
+    //std::cout<<"outputTimer:"<<outputTimer.getResult()<<std::endl;
 
 
 
     //Calculates gradient using TACO
     if(!ones_matrix) {
+      //taco::util::Timer gradTimer;
+      //gradTimer.start();
+      //taco::util::Timer gradParserTimer;
+      //gradParserTimer.start();
+      std::vector<taco::ModeType> sparse_format (replacement_vars.length(), taco::Sparse);
+      //std::vector<taco::ModeType> sparse_format (grad_result.getOrder(), taco::Sparse);
+      formats["result"] = sparse_format;
       taco::parser::Parser grad_pars(grad_expr, formats, tensor_sizes, loaded_tensors, 42);
       grad_pars.parse();
+      //gradParserTimer.stop();
+      //std::cout<<"\t\tgradParserTimer:"<<gradParserTimer.getResult()<<std::endl;
       taco::Tensor<double> grad_result = grad_pars.getResultTensor();
-      std::vector<taco::ModeType> sparse_format (grad_result.getOrder(), taco::Sparse);
-      
+      //std::cout<<"calculating gradient of "<<grad_expr<<std::endl;
       //this could be optimized but it won't be in tacotensor lol
-      grad_result.setFormat(sparse_format);
-      grad_result.pack();
-      grad_result.compile();
+
+      //grad_result.setFormat(sparse_format);
+      //grad_result.pack();
+
+      //taco::Tensor<double> grad_result(placeholder_result.getDimensions(), sparse_format);
+
+      
+      //grad_result.compile();
+      if (grad_funcs.empty()) {
+        grad_statements = grad_result.get_lowers();
+        grad_funcs = grad_result.functionize(grad_statements);
+      //if(compute_func == nullptr) {std::cout<<"still empty why"<<std::endl;} else {std::cout<<"not empty"<<std::endl;}
+        grad_result.apply_funcs(grad_funcs, &grad_statements[0], &grad_statements[1]);
+      } else {
+        grad_result.apply_funcs(grad_funcs, &grad_statements[0], &grad_statements[1]);
+      //std::cout<<compute_func_string<<std::endl;
+      }
       grad_result.assemble();
       grad_result.compute();
-
+      //gradTimer.stop();
+      //std::cout<<"\tgradTimer:"<<gradTimer.getResult()<<std::endl;
+      //tacoTimer.stop();
+      //std::cout<<"returns\n"<<grad_result<<std::endl;
+      //std::cout<<"tacoTimer:"<<tacoTimer.getResult()<<std::endl;
+      //taco::util::Timer transposeTimer;
+      //transposeTimer.start();
       taco::storage::Index grad_og_idx = grad_result.getStorage().getIndex();
       taco::Format grad_format = grad_result.getFormat();
 
@@ -566,10 +654,15 @@ class TacoExprOp : public OpKernel {
           count[order-1] = count[order-1] +1;
         }
       }
-
+      //taco::util::Timer transposePackTimer;
+      //transposePackTimer.start();
       grad_transpose.pack();
-
-
+      //transposePackTimer.stop();
+      //std::cout<<"transposePackTimer:"<<transposePackTimer.getResult()<<std::endl;
+      //transposeTimer.stop();
+      //std::cout<<"transposeTimer:"<<transposeTimer.getResult()<<std::endl;
+      //taco::util::Timer endTimer;
+      //endTimer.start();
       OP_REQUIRES_OK(context, idx_outputs.allocate(1, TensorShape({(long long int) (2+grad_transpose.getOrder())}), &grad_index_tensor));
       OP_REQUIRES_OK(context, val_outputs.allocate(1, TensorShape({(long long int) grad_transpose.getStorage().getValues().getSize()}), &grad_tensor));
       OP_REQUIRES_OK(context, idx_outputs.allocate(0,TensorShape({(long long int) (2+result.getOrder())}), &taco_index_tensor));
@@ -582,8 +675,13 @@ class TacoExprOp : public OpKernel {
       std::copy_n(data, result.getStorage().getValues().getSize(), taco_val.data());
       const double* data_grad = static_cast<const double*>(grad_transpose.getStorage().getValues().getData());
       std::copy_n(data_grad, grad_transpose.getStorage().getValues().getSize(), grad_val.data());
-     
+      //endTimer.stop();
+      //std::cout<<"endTimer:"<<endTimer.getResult()<<std::endl;
     } else {
+      //tacoTimer.stop();
+      //std::cout<<"no gradient tacoTimer:"<<tacoTimer.getResult()<<std::endl;
+      //taco::util::Timer endTimer;
+      //endTimer.start();
       OP_REQUIRES_OK(context, idx_outputs.allocate(0, TensorShape({2+FS}), &taco_index_tensor));
       OP_REQUIRES_OK(context, val_outputs.allocate(0, TensorShape(N), &taco_tensor));
       OP_REQUIRES_OK(context, idx_outputs.allocate(1, TensorShape({1}), &grad_index_tensor));
@@ -598,13 +696,25 @@ class TacoExprOp : public OpKernel {
       grad_index(0) = "\0";
       auto grad_val = grad_tensor->flat<double>();
       grad_val(0) = -1;
+      //endTimer.stop();
+      //std::cout<<"endTimer:"<<endTimer.getResult()<<std::endl;
     }
 
     for (auto& tensor: tensor_list){delete tensor;}
+    //wholeTimer.stop();
+    //std::cout<<"wholeTimer:"<<wholeTimer.getResult()<<std::endl;
   }
 
   private:
      int which_grad;
+     std::string funcs;
+     std::string grad_funcs;
+     std::vector<taco::ir::Stmt> statements;
+     std::vector<taco::ir::Stmt> grad_statements;
+     //taco::ir::Stmt assemble_func;
+     //taco::ir::Stmt compute_func;
+     //taco::ir::Stmt grad_assemble_func;
+     //taco::ir::Stmt grad_compute_func;
 };
 
 REGISTER_KERNEL_BUILDER(Name("TacoExprOp").Device(DEVICE_CPU), TacoExprOp);
